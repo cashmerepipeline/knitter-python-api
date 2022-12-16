@@ -22,7 +22,7 @@ async def main():
 
     metadata = (
         ("authorization", "bearer %s" % token),
-        ("role_group", "10000"),
+        (RoleGroupName, "10000"),
     )
 
     client_stub = get_client_stub(channel=insecure_channel)
