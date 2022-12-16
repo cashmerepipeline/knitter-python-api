@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 import name_pb2 as name__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0cmanage.proto\x12\x08\x63\x61shmere\x1a\nname.proto\"-\n\x06Manage\x12\x11\n\tmanage_id\x18\x01 \x01(\t\x12\x10\n\x08name_map\x18\x02 \x01(\x0c\"\x13\n\x11GetManagesRequest\"7\n\x12GetManagesResponse\x12!\n\x07manages\x18\x01 \x03(\x0b\x32\x10.cashmere.Manage\"/\n\x1aGetManageEntryCountRequest\x12\x11\n\tmanage_id\x18\x01 \x01(\t\",\n\x1bGetManageEntryCountResponse\x12\r\n\x05\x63ount\x18\x01 \x01(\x04\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0cmanage.proto\x12\x08\x63\x61shmere\x1a\nname.proto\"-\n\x06Manage\x12\x11\n\tmanage_id\x18\x01 \x01(\x05\x12\x10\n\x08name_map\x18\x02 \x01(\x0c\"\x13\n\x11GetManagesRequest\"7\n\x12GetManagesResponse\x12!\n\x07manages\x18\x01 \x03(\x0b\x32\x10.cashmere.Manage\"/\n\x1aGetManageEntryCountRequest\x12\x11\n\tmanage_id\x18\x01 \x01(\x05\",\n\x1bGetManageEntryCountResponse\x12\r\n\x05\x63ount\x18\x01 \x01(\x04\x62\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'manage_pb2', globals())

@@ -11,7 +11,7 @@ import grpc
 import login_pb2
 import account_service_pb2_grpc
 
-def login(server, country_code, phone, password):
+async def login(server, country_code, phone, password):
     """
 
     """
