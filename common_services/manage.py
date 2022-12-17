@@ -44,10 +44,9 @@ async def get_manage_entry_count(request, stub, metadata):
         return (e.code(), None, e.details())
 
 
-async def get_manage_schema(manage_id, stub, metadata):
-    request = manage_pb2.GetManageSchemaRequest(manage_id=manage_id)
+async def get_manage_schema(request, stub, metadata):
     try:
-        response, call = stub.GetManageSchema.with_call(request, metadata=metadata)
+        response, _call = stub.GetManageSchema.with_call(request, metadata=metadata)
         return (grpc.StatusCode.OK, response, None)
 
     except grpc.RpcError as e:
@@ -81,12 +80,9 @@ async def edit_manage_schema_field_name(
         return (e.code(), None, e.details())
 
 
-async def mark_manage_schema_field_removed(manage_id, field_id, stub, metadata):
-    request = manage_pb2.RemoveSchemaFieldRequest(
-        manage_id=manage_id, field_id=field_id
-    )
+async def mark_manage_schema_field_removed(request, stub, metadata):
     try:
-        response, call = stub.RemoveSchemaField.with_call(request, metadata=metadata)
+        response, _call = stub.MarkSchemaFieldRemoved.with_call(request, metadata=metadata)
         return (grpc.StatusCode.OK, response, None)
 
     except grpc.RpcError as e:
