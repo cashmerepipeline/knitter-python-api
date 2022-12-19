@@ -8,17 +8,15 @@ Introduction:
 """
 
 import grpc
-import login_pb2
+from login_pb2 import LoginRequest
 import account_service_pb2_grpc
 
-async def login(server, country_code, phone, password):
+async def login(request:LoginRequest, stub):
     """
 
     """
-    channel = grpc.insecure_channel(server)
-    stub = account_service_pb2_grpc.AccountGrpcStub(channel)
     try:
-        response = stub.Login(login_pb2.LoginRequest(country_code=country_code, phone=phone, password=password))
+        response = stub.Login(request)
         return (grpc.StatusCode.OK, response, None)
 
     except grpc.RpcError as e:

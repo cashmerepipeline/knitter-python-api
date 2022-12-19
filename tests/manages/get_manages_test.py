@@ -5,24 +5,14 @@ import bson
 
 from common_services.manage import get_manages
 from auth_codes import RoleGroupName
-from knitter_client import get_client_stub
-from common_services.account.login import login
+from knitter_client import get_knitter_client_stub, login
 from test_settings import *
 import manage_pb2
 
 async def main():
-    ok, response, details = await login(server, country_code, phone, passwd)
-    if not ok == grpc.StatusCode.OK:
-        error("登录失败", ok, details)
-        return -1
+    metadata, person= await login(area_code, phone, passwd, insecure_channel)
 
-    token = response.token
-    metadata = (
-        ("authorization", "bearer %s" % token),
-        ("role_group", "10000"),
-    )
-
-    client_stub = get_client_stub(channel=insecure_channel)
+    client_stub = get_knitter_client_stub(channel=insecure_channel)
     request = manage_pb2.GetManagesRequest()
 
     ok, m_response, details = await get_manages(request, client_stub, metadata=metadata) 
@@ -36,7 +26,6 @@ async def main():
     else:
         error("发生错误%s-%s"%(ok, details))
         return
-
 
     assert ok == grpc.StatusCode.OK
     assert len(m_response.manages) > 0

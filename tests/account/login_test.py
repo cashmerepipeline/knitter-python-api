@@ -6,22 +6,26 @@ Creator: 闫刚
 Create time: 2020-10-22 07:33
 Introduction:
 """
-
+import logging
 import sys
 import os
 import asyncio
-
-sys.path.append(".")
-sys.path.append("./grpc_generated")
-sys.path.append(os.path.dirname(__file__))
-
 import bson
 import grpc
 
-from common_services.account.login import login
+from common_services.account import login
+from login_pb2 import LoginRequest
+from knitter_client import get_account_server_client
+from test_settings import server, area_code, phone, passwd, insecure_channel
 
-from test_settings import server, country_code, phone, passwd
+stub = get_account_server_client(insecure_channel)
+request = LoginRequest( area_code=area_code, phone= phone, password=passwd)
 
-ok, response, details = asyncio.run(login(server, country_code, phone, passwd))
+ok, response, details = asyncio.run(login(request, stub))
+if not ok == grpc.StatusCode.OK:
+    logging.error("登录失败")
+else:
+    print(bson.decode(response.person))
+    print(response.token)
 
 assert ok == grpc.StatusCode.OK

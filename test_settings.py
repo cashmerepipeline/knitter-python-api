@@ -1,7 +1,7 @@
 import grpc
 
 
-country_code = "86"
+area_code = "86"
 phone = "10000000000"
 passwd = "root"
 group = "10000"

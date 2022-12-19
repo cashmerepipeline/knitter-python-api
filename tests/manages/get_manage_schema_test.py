@@ -6,27 +6,15 @@ import bson
 from common_services.manage import get_manage_entry_count, get_manage_schema, get_manages
 from auth_codes import RoleGroupName
 from id_codes.manage_ids import GROUPS_MANAGE_ID, MANAGES_MANAGE_ID
-from knitter_client import get_client_stub
-from common_services.account.login import login
+from knitter_client import get_knitter_client_stub, login
 from test_settings import *
 
-from manage_schema_pb2 import GetManageSchemaRequest, GetManageSchemaResponse
-
+from manage_schema_pb2 import GetManageSchemaRequest
 
 async def main():
-    ok, response, details = await login(server, country_code, phone, passwd)
-    if not ok == grpc.StatusCode.OK:
-        print("登录失败")
-        print(details)
-        return -1
+    metadata, person= await login(area_code, phone, passwd, insecure_channel)
 
-    token = response.token
-    metadata = (
-        ("authorization", "bearer %s" % token),
-        (RoleGroupName, "10000"),
-    )
-
-    client_stub = get_client_stub(channel=insecure_channel)
+    client_stub = get_knitter_client_stub(channel=insecure_channel)
 
     # get Manage schema
     request = GetManageSchemaRequest(manage_id=MANAGES_MANAGE_ID)
@@ -35,7 +23,7 @@ async def main():
 
     # 打印模式表
     if ok == grpc.StatusCode.OK:
-        fields = map(lambda x: (x.id, bson.decode(x.name_map), x.data_type), sorted(m_response.fields, key=lambda x: x.id))
+        fields = map(lambda x: (x.id, bson.decode(x.name_map), x.data_type, x.removed), sorted(m_response.fields, key=lambda x: x.id))
         for field in fields:
             print(field)
     else:

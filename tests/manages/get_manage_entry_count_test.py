@@ -6,27 +6,16 @@ import bson
 from common_services.manage import get_manage_entry_count, get_manages
 from auth_codes import RoleGroupName
 from id_codes.manage_ids import GROUPS_MANAGE_ID, MANAGES_MANAGE_ID
-from knitter_client import get_client_stub
-from common_services.account.login import login
+from knitter_client import get_knitter_client_stub, login
 from test_settings import *
 
-from manage_pb2 import GetManagesRequest, GetManageEntryCountRequest
+from manage_pb2 import GetManageEntryCountRequest
 
 
 async def main():
-    ok, response, details = await login(server, country_code, phone, passwd)
-    if not ok == grpc.StatusCode.OK:
-        print("登录失败")
-        print(details)
-        return -1
+    metadata, person= await login(area_code, phone, passwd, insecure_channel)
 
-    token = response.token
-    metadata = (
-        ("authorization", "bearer %s" % token),
-        (RoleGroupName, "10000"),
-    )
-
-    client_stub = get_client_stub(channel=insecure_channel)
+    client_stub = get_knitter_client_stub(channel=insecure_channel)
 
     # get manages count
     request = GetManageEntryCountRequest(manage_id=MANAGES_MANAGE_ID)
@@ -44,6 +33,5 @@ async def main():
 
     assert ok == grpc.StatusCode.OK
     assert m_response.count > 0
-
 
 asyncio.run(main())
