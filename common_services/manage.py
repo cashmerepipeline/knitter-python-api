@@ -46,7 +46,7 @@ async def get_manage_entry_count(request, stub, metadata):
 
 async def get_manage_schema(request, stub, metadata):
     try:
-        response, _call = stub.GetManageSchema.with_call(request, metadata=metadata)
+        response = stub.GetManageSchema(request, metadata=metadata)
         return (grpc.StatusCode.OK, response, None)
 
     except grpc.RpcError as e:

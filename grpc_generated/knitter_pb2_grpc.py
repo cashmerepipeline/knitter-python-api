@@ -257,8 +257,8 @@ class KnitterGrpcStub(object):
                 request_serializer=asset__pb2.GetReferencedAssetsRequest.SerializeToString,
                 response_deserializer=asset__pb2.GetReferencedAssetsResponse.FromString,
                 )
-        self.MartAssetSatus = channel.unary_unary(
-                '/io.knitter.KnitterGrpc/MartAssetSatus',
+        self.MarkAssetSatus = channel.unary_unary(
+                '/io.knitter.KnitterGrpc/MarkAssetSatus',
                 request_serializer=asset__pb2.MarkAssetStatusRequest.SerializeToString,
                 response_deserializer=asset__pb2.MarkAssetStatusResponse.FromString,
                 )
@@ -312,8 +312,8 @@ class KnitterGrpcStub(object):
                 request_serializer=set__pb2.NewSetRequest.SerializeToString,
                 response_deserializer=set__pb2.NewSetResponse.FromString,
                 )
-        self.MartSetSatus = channel.unary_unary(
-                '/io.knitter.KnitterGrpc/MartSetSatus',
+        self.MarkSetSatus = channel.unary_unary(
+                '/io.knitter.KnitterGrpc/MarkSetSatus',
                 request_serializer=set__pb2.MarkSetStatusRequest.SerializeToString,
                 response_deserializer=set__pb2.MarkSetStatusResponse.FromString,
                 )
@@ -631,7 +631,7 @@ class KnitterGrpcServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def MartAssetSatus(self, request, context):
+    def MarkAssetSatus(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -703,7 +703,7 @@ class KnitterGrpcServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def MartSetSatus(self, request, context):
+    def MarkSetSatus(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -971,8 +971,8 @@ def add_KnitterGrpcServicer_to_server(servicer, server):
                     request_deserializer=asset__pb2.GetReferencedAssetsRequest.FromString,
                     response_serializer=asset__pb2.GetReferencedAssetsResponse.SerializeToString,
             ),
-            'MartAssetSatus': grpc.unary_unary_rpc_method_handler(
-                    servicer.MartAssetSatus,
+            'MarkAssetSatus': grpc.unary_unary_rpc_method_handler(
+                    servicer.MarkAssetSatus,
                     request_deserializer=asset__pb2.MarkAssetStatusRequest.FromString,
                     response_serializer=asset__pb2.MarkAssetStatusResponse.SerializeToString,
             ),
@@ -1026,8 +1026,8 @@ def add_KnitterGrpcServicer_to_server(servicer, server):
                     request_deserializer=set__pb2.NewSetRequest.FromString,
                     response_serializer=set__pb2.NewSetResponse.SerializeToString,
             ),
-            'MartSetSatus': grpc.unary_unary_rpc_method_handler(
-                    servicer.MartSetSatus,
+            'MarkSetSatus': grpc.unary_unary_rpc_method_handler(
+                    servicer.MarkSetSatus,
                     request_deserializer=set__pb2.MarkSetStatusRequest.FromString,
                     response_serializer=set__pb2.MarkSetStatusResponse.SerializeToString,
             ),
@@ -1820,7 +1820,7 @@ class KnitterGrpc(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def MartAssetSatus(request,
+    def MarkAssetSatus(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1830,7 +1830,7 @@ class KnitterGrpc(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/io.knitter.KnitterGrpc/MartAssetSatus',
+        return grpc.experimental.unary_unary(request, target, '/io.knitter.KnitterGrpc/MarkAssetSatus',
             asset__pb2.MarkAssetStatusRequest.SerializeToString,
             asset__pb2.MarkAssetStatusResponse.FromString,
             options, channel_credentials,
@@ -2007,7 +2007,7 @@ class KnitterGrpc(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def MartSetSatus(request,
+    def MarkSetSatus(request,
             target,
             options=(),
             channel_credentials=None,
@@ -2017,7 +2017,7 @@ class KnitterGrpc(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/io.knitter.KnitterGrpc/MartSetSatus',
+        return grpc.experimental.unary_unary(request, target, '/io.knitter.KnitterGrpc/MarkSetSatus',
             set__pb2.MarkSetStatusRequest.SerializeToString,
             set__pb2.MarkSetStatusResponse.FromString,
             options, channel_credentials,

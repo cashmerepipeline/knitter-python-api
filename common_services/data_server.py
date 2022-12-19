@@ -1,69 +1,66 @@
 import grpc
 
-# 实体，主要是实体查询
-async def get_entity(request, stub, metadata):
+async def get_data_server_configs(request, stub, metadata):
     try:
-        response = stub.GetEntity(request, metadata=metadata)
+        response = stub.GetDataServerConfigs(request, metadata=metadata)
         return (grpc.StatusCode.OK, response, None)
     except grpc.RpcError as e:
         # print(e.code(), None, e.details())
         return (e.code(), None, e.details())
 
-async def get_entities(request, stub, metadata):
+async def new_data(request, stub, metadata):
     try:
-        response = stub.GetEntities(request, metadata=metadata)
+        response = stub.NewData(request, metadata=metadata)
         return (grpc.StatusCode.OK, response, None)
     except grpc.RpcError as e:
         # print(e.code(), None, e.details())
         return (e.code(), None, e.details())
 
-async def dget_entities_page(request, stub, metadata):
+async def list_data(request, stub, metadata):
     try:
-        response = stub.GetEntitiesPage(request, metadata=metadata)
-        return (grpc.StatusCode.OK, response, None)
-    except grpc.RpcError as e:
-        # print(e.code(), None, e.details())
-        return (e.code(), None, e.details())
-                                    
-# 编辑实体属性，非数据结构
-async def edit_entity_field(request, stub, metadata):
-    try:
-        response = stub.EditEntityField(request, metadata=metadata)
+        response = stub.ListData(request, metadata=metadata)
         return (grpc.StatusCode.OK, response, None)
     except grpc.RpcError as e:
         # print(e.code(), None, e.details())
         return (e.code(), None, e.details())
 
-# 编辑实体属性，MAP数据结构
-async def edit_entity_map_field(request, stub, metadata):
+async def list_data_stages(request, stub, metadata):
     try:
-        response = stub.EditEntityMapField(request, metadata=metadata)
+        response = stub.ListDataStages(request, metadata=metadata)
         return (grpc.StatusCode.OK, response, None)
     except grpc.RpcError as e:
         # print(e.code(), None, e.details())
         return (e.code(), None, e.details())
 
-async def edit_entity_map_field_remove_key(request, stub, metadata):
+async def add_data_stage_version(request, stub, metadata):
     try:
-        response = stub.EditEntityMapFieldRemoveKey(request, metadata=metadata)
+        response = stub.AddDataStageVersion(request, metadata=metadata)
         return (grpc.StatusCode.OK, response, None)
     except grpc.RpcError as e:
         # print(e.code(), None, e.details())
         return (e.code(), None, e.details())
 
-# 编辑实体属性，List数据结构
-async def edit_entity_list_field_add_items(request, stub, metadata):
+async def mark_data_removed(request, stub, metadata):
     try:
-        response = stub.EditEntityListFieldAddItems(request, metadata=metadata)
+        response = stub.MarkDataRemoved(request, metadata=metadata)
         return (grpc.StatusCode.OK, response, None)
     except grpc.RpcError as e:
         # print(e.code(), None, e.details())
         return (e.code(), None, e.details())
 
-async def edit_entity_list_field_remove_items(request, stub, metadata):
+async def file_data_upload_file(request, stub, metadata):
     try:
-        response = stub.EditEntityListFieldRemoveItems(request, metadata=metadata)
+        response = stub.FileDataUploadFile(request, metadata=metadata)
         return (grpc.StatusCode.OK, response, None)
     except grpc.RpcError as e:
         # print(e.code(), None, e.details())
         return (e.code(), None, e.details())
+
+async def file_data_download_file(request, stub, metadata):
+    try:
+        response = stub.FileDataDownloadFile(request, metadata=metadata)
+        return (grpc.StatusCode.OK, response, None)
+    except grpc.RpcError as e:
+        # print(e.code(), None, e.details())
+        return (e.code(), None, e.details())
+
