@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 import name_pb2 as name__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0c\x65ntity.proto\x12\x08\x63\x61shmere\x1a\nname.proto\"\x83\x02\n\x06\x45ntity\x12\n\n\x02id\x18\x01 \x01(\t\x12\x1c\n\x04name\x18\x02 \x01(\x0b\x32\x0e.cashmere.Name\x12\x12\n\ncreator_id\x18\x03 \x01(\t\x12\x18\n\x10\x63reate_timestamp\x18\x04 \x01(\t\x12\x13\n\x0bmodifier_id\x18\x05 \x01(\t\x12\x18\n\x10modify_timestamp\x18\x06 \x01(\t\x12\x10\n\x08owner_id\x18\x07 \x01(\t\x12\x0e\n\x06groups\x18\x08 \x03(\t\x12\x10\n\x08\x64\x61ta_ids\x18\t \x03(\t\x12\x13\n\x0b\x63omment_ids\x18\n \x03(\t\x12\x0f\n\x07removed\x18\x0b \x01(\x08\x12\x18\n\x10removed_data_ids\x18\x0c \x03(\t\"f\n\x12\x43hangeOwnerRequest\x12\x11\n\tmanage_id\x18\x01 \x01(\x05\x12\x11\n\tentity_id\x18\x02 \x01(\t\x12\x14\n\x0cold_owner_id\x18\x03 \x01(\t\x12\x14\n\x0cnew_owner_id\x18\x04 \x01(\t\"%\n\x13\x43hangeOwnerResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"3\n\x10NewEntityRequest\x12\x11\n\tmanage_id\x18\x01 \x01(\x05\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\"#\n\x11NewEntityResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"G\n\x11\x45\x64itEntityRequest\x12\x11\n\tmanage_id\x18\x01 \x01(\x05\x12\x11\n\tentity_id\x18\x02 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x03 \x01(\x0c\"$\n\x12\x45\x64itEntityResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"c\n\x16\x45\x64itEntityFieldRequest\x12\x11\n\tmanage_id\x18\x01 \x01(\x05\x12\x11\n\tentity_id\x18\x02 \x01(\t\x12\x10\n\x08\x66ield_id\x18\x03 \x01(\t\x12\x11\n\tnew_value\x18\x04 \x01(\x0c\")\n\x17\x45\x64itEntityFieldResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"s\n\x19\x45\x64itEntityMapFieldRequest\x12\x11\n\tmanage_id\x18\x01 \x01(\x05\x12\x11\n\tentity_id\x18\x02 \x01(\t\x12\x10\n\x08\x66ield_id\x18\x03 \x01(\t\x12\x0b\n\x03key\x18\x04 \x01(\t\x12\x11\n\tnew_value\x18\x05 \x01(\x0c\",\n\x1a\x45\x64itEntityMapFieldResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"i\n\"EditEntityMapFieldRemoveKeyRequest\x12\x11\n\tmanage_id\x18\x01 \x01(\x05\x12\x11\n\tentity_id\x18\x02 \x01(\t\x12\x10\n\x08\x66ield_id\x18\x03 \x01(\t\x12\x0b\n\x03key\x18\x04 \x01(\t\"5\n#EditEntityMapFieldRemoveKeyResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"k\n\"EditEntityListFieldAddItemsRequest\x12\x11\n\tmanage_id\x18\x01 \x01(\x05\x12\x11\n\tentity_id\x18\x02 \x01(\t\x12\x10\n\x08\x66ield_id\x18\x03 \x01(\t\x12\r\n\x05items\x18\x04 \x01(\x0c\"5\n#EditEntityListFieldAddItemsResponse\x12\x0e\n\x06result\x18\x01 \x01(\x0c\"n\n%EditEntityListFieldRemoveItemsRequest\x12\x11\n\tmanage_id\x18\x01 \x01(\x05\x12\x11\n\tentity_id\x18\x02 \x01(\t\x12\x10\n\x08\x66ield_id\x18\x03 \x01(\t\x12\r\n\x05items\x18\x04 \x01(\x0c\"8\n&EditEntityListFieldRemoveItemsResponse\x12\x0e\n\x06result\x18\x01 \x01(\x0c\"8\n\x10GetEntityRequest\x12\x11\n\tmanage_id\x18\x01 \x01(\x05\x12\x11\n\tentity_id\x18\x02 \x01(\t\"#\n\x11GetEntityResponse\x12\x0e\n\x06\x65ntity\x18\x01 \x01(\x0c\";\n\x12GetEntitiesRequest\x12\x11\n\tmanage_id\x18\x01 \x01(\x05\x12\x12\n\nentity_ids\x18\x02 \x03(\t\"\'\n\x13GetEntitiesResponse\x12\x10\n\x08\x65ntities\x18\x01 \x03(\x0c\"S\n\x16GetEntitiesPageRequest\x12\x11\n\tmanage_id\x18\x01 \x01(\x05\x12\x12\n\npage_index\x18\x02 \x01(\r\x12\x12\n\nconditions\x18\x03 \x01(\x0c\"+\n\x17GetEntitiesPageResponse\x12\x10\n\x08\x65ntities\x18\x01 \x03(\x0c\"@\n\x18MarkEntityRemovedRequest\x12\x11\n\tmanage_id\x18\x01 \x01(\x05\x12\x11\n\tentity_id\x18\x02 \x01(\t\"+\n\x19MarkEntityRemovedResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"R\n\x19GetRemovedDataListRequest\x12\x11\n\tmanage_id\x18\x01 \x01(\t\x12\x11\n\tentity_id\x18\x02 \x01(\t\x12\x0f\n\x07\x64\x61ta_id\x18\x03 \x01(\t\".\n\x1aGetRemovedDataListResponse\x12\x10\n\x08\x64\x61ta_ids\x18\x01 \x03(\tb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0c\x65ntity.proto\x12\x08\x63\x61shmere\x1a\nname.proto\"\x83\x02\n\x06\x45ntity\x12\n\n\x02id\x18\x01 \x01(\t\x12\x1c\n\x04name\x18\x02 \x01(\x0b\x32\x0e.cashmere.Name\x12\x12\n\ncreator_id\x18\x03 \x01(\t\x12\x18\n\x10\x63reate_timestamp\x18\x04 \x01(\t\x12\x13\n\x0bmodifier_id\x18\x05 \x01(\t\x12\x18\n\x10modify_timestamp\x18\x06 \x01(\t\x12\x10\n\x08owner_id\x18\x07 \x01(\t\x12\x0e\n\x06groups\x18\x08 \x03(\t\x12\x10\n\x08\x64\x61ta_ids\x18\t \x03(\t\x12\x13\n\x0b\x63omment_ids\x18\n \x03(\t\x12\x0f\n\x07removed\x18\x0b \x01(\x08\x12\x18\n\x10removed_data_ids\x18\x0c \x03(\t\"f\n\x12\x43hangeOwnerRequest\x12\x11\n\tmanage_id\x18\x01 \x01(\x05\x12\x11\n\tentity_id\x18\x02 \x01(\t\x12\x14\n\x0cold_owner_id\x18\x03 \x01(\t\x12\x14\n\x0cnew_owner_id\x18\x04 \x01(\t\"%\n\x13\x43hangeOwnerResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"3\n\x10NewEntityRequest\x12\x11\n\tmanage_id\x18\x01 \x01(\x05\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\"#\n\x11NewEntityResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"G\n\x11\x45\x64itEntityRequest\x12\x11\n\tmanage_id\x18\x01 \x01(\x05\x12\x11\n\tentity_id\x18\x02 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x03 \x01(\x0c\"$\n\x12\x45\x64itEntityResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"c\n\x16\x45\x64itEntityFieldRequest\x12\x11\n\tmanage_id\x18\x01 \x01(\x05\x12\x11\n\tentity_id\x18\x02 \x01(\t\x12\x10\n\x08\x66ield_id\x18\x03 \x01(\t\x12\x11\n\tnew_value\x18\x04 \x01(\x0c\")\n\x17\x45\x64itEntityFieldResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"s\n\x19\x45\x64itEntityMapFieldRequest\x12\x11\n\tmanage_id\x18\x01 \x01(\x05\x12\x11\n\tentity_id\x18\x02 \x01(\t\x12\x10\n\x08\x66ield_id\x18\x03 \x01(\t\x12\x0b\n\x03key\x18\x04 \x01(\t\x12\x11\n\tnew_value\x18\x05 \x01(\x0c\",\n\x1a\x45\x64itEntityMapFieldResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"i\n\"EditEntityMapFieldRemoveKeyRequest\x12\x11\n\tmanage_id\x18\x01 \x01(\x05\x12\x11\n\tentity_id\x18\x02 \x01(\t\x12\x10\n\x08\x66ield_id\x18\x03 \x01(\t\x12\x0b\n\x03key\x18\x04 \x01(\t\"5\n#EditEntityMapFieldRemoveKeyResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"l\n#EditEntityArrayFieldAddItemsRequest\x12\x11\n\tmanage_id\x18\x01 \x01(\x05\x12\x11\n\tentity_id\x18\x02 \x01(\t\x12\x10\n\x08\x66ield_id\x18\x03 \x01(\t\x12\r\n\x05items\x18\x04 \x01(\x0c\"6\n$EditEntityArrayFieldAddItemsResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"o\n&EditEntityArrayFieldRemoveItemsRequest\x12\x11\n\tmanage_id\x18\x01 \x01(\x05\x12\x11\n\tentity_id\x18\x02 \x01(\t\x12\x10\n\x08\x66ield_id\x18\x03 \x01(\t\x12\r\n\x05items\x18\x04 \x01(\x0c\"9\n\'EditEntityArrayFieldRemoveItemsResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"8\n\x10GetEntityRequest\x12\x11\n\tmanage_id\x18\x01 \x01(\x05\x12\x11\n\tentity_id\x18\x02 \x01(\t\"#\n\x11GetEntityResponse\x12\x0e\n\x06\x65ntity\x18\x01 \x01(\x0c\";\n\x12GetEntitiesRequest\x12\x11\n\tmanage_id\x18\x01 \x01(\x05\x12\x12\n\nentity_ids\x18\x02 \x03(\t\"\'\n\x13GetEntitiesResponse\x12\x10\n\x08\x65ntities\x18\x01 \x03(\x0c\"S\n\x16GetEntitiesPageRequest\x12\x11\n\tmanage_id\x18\x01 \x01(\x05\x12\x12\n\npage_index\x18\x02 \x01(\r\x12\x12\n\nconditions\x18\x03 \x01(\x0c\"+\n\x17GetEntitiesPageResponse\x12\x10\n\x08\x65ntities\x18\x01 \x03(\x0c\"@\n\x18MarkEntityRemovedRequest\x12\x11\n\tmanage_id\x18\x01 \x01(\x05\x12\x11\n\tentity_id\x18\x02 \x01(\t\"+\n\x19MarkEntityRemovedResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"R\n\x19GetRemovedDataListRequest\x12\x11\n\tmanage_id\x18\x01 \x01(\t\x12\x11\n\tentity_id\x18\x02 \x01(\t\x12\x0f\n\x07\x64\x61ta_id\x18\x03 \x01(\t\".\n\x1aGetRemovedDataListResponse\x12\x10\n\x08\x64\x61ta_ids\x18\x01 \x03(\tb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'entity_pb2', globals())
@@ -47,32 +47,32 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _EDITENTITYMAPFIELDREMOVEKEYREQUEST._serialized_end=1056
   _EDITENTITYMAPFIELDREMOVEKEYRESPONSE._serialized_start=1058
   _EDITENTITYMAPFIELDREMOVEKEYRESPONSE._serialized_end=1111
-  _EDITENTITYLISTFIELDADDITEMSREQUEST._serialized_start=1113
-  _EDITENTITYLISTFIELDADDITEMSREQUEST._serialized_end=1220
-  _EDITENTITYLISTFIELDADDITEMSRESPONSE._serialized_start=1222
-  _EDITENTITYLISTFIELDADDITEMSRESPONSE._serialized_end=1275
-  _EDITENTITYLISTFIELDREMOVEITEMSREQUEST._serialized_start=1277
-  _EDITENTITYLISTFIELDREMOVEITEMSREQUEST._serialized_end=1387
-  _EDITENTITYLISTFIELDREMOVEITEMSRESPONSE._serialized_start=1389
-  _EDITENTITYLISTFIELDREMOVEITEMSRESPONSE._serialized_end=1445
-  _GETENTITYREQUEST._serialized_start=1447
-  _GETENTITYREQUEST._serialized_end=1503
-  _GETENTITYRESPONSE._serialized_start=1505
-  _GETENTITYRESPONSE._serialized_end=1540
-  _GETENTITIESREQUEST._serialized_start=1542
-  _GETENTITIESREQUEST._serialized_end=1601
-  _GETENTITIESRESPONSE._serialized_start=1603
-  _GETENTITIESRESPONSE._serialized_end=1642
-  _GETENTITIESPAGEREQUEST._serialized_start=1644
-  _GETENTITIESPAGEREQUEST._serialized_end=1727
-  _GETENTITIESPAGERESPONSE._serialized_start=1729
-  _GETENTITIESPAGERESPONSE._serialized_end=1772
-  _MARKENTITYREMOVEDREQUEST._serialized_start=1774
-  _MARKENTITYREMOVEDREQUEST._serialized_end=1838
-  _MARKENTITYREMOVEDRESPONSE._serialized_start=1840
-  _MARKENTITYREMOVEDRESPONSE._serialized_end=1883
-  _GETREMOVEDDATALISTREQUEST._serialized_start=1885
-  _GETREMOVEDDATALISTREQUEST._serialized_end=1967
-  _GETREMOVEDDATALISTRESPONSE._serialized_start=1969
-  _GETREMOVEDDATALISTRESPONSE._serialized_end=2015
+  _EDITENTITYARRAYFIELDADDITEMSREQUEST._serialized_start=1113
+  _EDITENTITYARRAYFIELDADDITEMSREQUEST._serialized_end=1221
+  _EDITENTITYARRAYFIELDADDITEMSRESPONSE._serialized_start=1223
+  _EDITENTITYARRAYFIELDADDITEMSRESPONSE._serialized_end=1277
+  _EDITENTITYARRAYFIELDREMOVEITEMSREQUEST._serialized_start=1279
+  _EDITENTITYARRAYFIELDREMOVEITEMSREQUEST._serialized_end=1390
+  _EDITENTITYARRAYFIELDREMOVEITEMSRESPONSE._serialized_start=1392
+  _EDITENTITYARRAYFIELDREMOVEITEMSRESPONSE._serialized_end=1449
+  _GETENTITYREQUEST._serialized_start=1451
+  _GETENTITYREQUEST._serialized_end=1507
+  _GETENTITYRESPONSE._serialized_start=1509
+  _GETENTITYRESPONSE._serialized_end=1544
+  _GETENTITIESREQUEST._serialized_start=1546
+  _GETENTITIESREQUEST._serialized_end=1605
+  _GETENTITIESRESPONSE._serialized_start=1607
+  _GETENTITIESRESPONSE._serialized_end=1646
+  _GETENTITIESPAGEREQUEST._serialized_start=1648
+  _GETENTITIESPAGEREQUEST._serialized_end=1731
+  _GETENTITIESPAGERESPONSE._serialized_start=1733
+  _GETENTITIESPAGERESPONSE._serialized_end=1776
+  _MARKENTITYREMOVEDREQUEST._serialized_start=1778
+  _MARKENTITYREMOVEDREQUEST._serialized_end=1842
+  _MARKENTITYREMOVEDRESPONSE._serialized_start=1844
+  _MARKENTITYREMOVEDRESPONSE._serialized_end=1887
+  _GETREMOVEDDATALISTREQUEST._serialized_start=1889
+  _GETREMOVEDDATALISTREQUEST._serialized_end=1971
+  _GETREMOVEDDATALISTRESPONSE._serialized_start=1973
+  _GETREMOVEDDATALISTRESPONSE._serialized_end=2019
 # @@protoc_insertion_point(module_scope)

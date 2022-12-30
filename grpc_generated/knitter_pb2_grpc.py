@@ -117,15 +117,15 @@ class KnitterGrpcStub(object):
                 request_serializer=entity__pb2.EditEntityMapFieldRemoveKeyRequest.SerializeToString,
                 response_deserializer=entity__pb2.EditEntityMapFieldRemoveKeyResponse.FromString,
                 )
-        self.EditEntityListFieldAddItems = channel.unary_unary(
-                '/io.knitter.KnitterGrpc/EditEntityListFieldAddItems',
-                request_serializer=entity__pb2.EditEntityListFieldAddItemsRequest.SerializeToString,
-                response_deserializer=entity__pb2.EditEntityListFieldAddItemsResponse.FromString,
+        self.EditEntityArrayFieldAddItems = channel.unary_unary(
+                '/io.knitter.KnitterGrpc/EditEntityArrayFieldAddItems',
+                request_serializer=entity__pb2.EditEntityArrayFieldAddItemsRequest.SerializeToString,
+                response_deserializer=entity__pb2.EditEntityArrayFieldAddItemsResponse.FromString,
                 )
-        self.EditEntityListFieldRemoveItems = channel.unary_unary(
-                '/io.knitter.KnitterGrpc/EditEntityListFieldRemoveItems',
-                request_serializer=entity__pb2.EditEntityListFieldRemoveItemsRequest.SerializeToString,
-                response_deserializer=entity__pb2.EditEntityListFieldRemoveItemsResponse.FromString,
+        self.EditEntityArrayFieldRemoveItems = channel.unary_unary(
+                '/io.knitter.KnitterGrpc/EditEntityArrayFieldRemoveItems',
+                request_serializer=entity__pb2.EditEntityArrayFieldRemoveItemsRequest.SerializeToString,
+                response_deserializer=entity__pb2.EditEntityArrayFieldRemoveItemsResponse.FromString,
                 )
         self.Rename = channel.unary_unary(
                 '/io.knitter.KnitterGrpc/Rename',
@@ -434,14 +434,14 @@ class KnitterGrpcServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def EditEntityField(self, request, context):
-        """编辑实体属性，非数据结构
+        """通用编辑实体属性，非数据结构
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def EditEntityMapField(self, request, context):
-        """编辑实体属性，MAP数据结构
+        """通用编辑实体属性，MAP数据结构
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -453,14 +453,14 @@ class KnitterGrpcServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def EditEntityListFieldAddItems(self, request, context):
-        """编辑实体属性，List数据结构
+    def EditEntityArrayFieldAddItems(self, request, context):
+        """通用编辑实体属性，List数据结构
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def EditEntityListFieldRemoveItems(self, request, context):
+    def EditEntityArrayFieldRemoveItems(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -831,15 +831,15 @@ def add_KnitterGrpcServicer_to_server(servicer, server):
                     request_deserializer=entity__pb2.EditEntityMapFieldRemoveKeyRequest.FromString,
                     response_serializer=entity__pb2.EditEntityMapFieldRemoveKeyResponse.SerializeToString,
             ),
-            'EditEntityListFieldAddItems': grpc.unary_unary_rpc_method_handler(
-                    servicer.EditEntityListFieldAddItems,
-                    request_deserializer=entity__pb2.EditEntityListFieldAddItemsRequest.FromString,
-                    response_serializer=entity__pb2.EditEntityListFieldAddItemsResponse.SerializeToString,
+            'EditEntityArrayFieldAddItems': grpc.unary_unary_rpc_method_handler(
+                    servicer.EditEntityArrayFieldAddItems,
+                    request_deserializer=entity__pb2.EditEntityArrayFieldAddItemsRequest.FromString,
+                    response_serializer=entity__pb2.EditEntityArrayFieldAddItemsResponse.SerializeToString,
             ),
-            'EditEntityListFieldRemoveItems': grpc.unary_unary_rpc_method_handler(
-                    servicer.EditEntityListFieldRemoveItems,
-                    request_deserializer=entity__pb2.EditEntityListFieldRemoveItemsRequest.FromString,
-                    response_serializer=entity__pb2.EditEntityListFieldRemoveItemsResponse.SerializeToString,
+            'EditEntityArrayFieldRemoveItems': grpc.unary_unary_rpc_method_handler(
+                    servicer.EditEntityArrayFieldRemoveItems,
+                    request_deserializer=entity__pb2.EditEntityArrayFieldRemoveItemsRequest.FromString,
+                    response_serializer=entity__pb2.EditEntityArrayFieldRemoveItemsResponse.SerializeToString,
             ),
             'Rename': grpc.unary_unary_rpc_method_handler(
                     servicer.Rename,
@@ -1344,7 +1344,7 @@ class KnitterGrpc(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def EditEntityListFieldAddItems(request,
+    def EditEntityArrayFieldAddItems(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1354,14 +1354,14 @@ class KnitterGrpc(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/io.knitter.KnitterGrpc/EditEntityListFieldAddItems',
-            entity__pb2.EditEntityListFieldAddItemsRequest.SerializeToString,
-            entity__pb2.EditEntityListFieldAddItemsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/io.knitter.KnitterGrpc/EditEntityArrayFieldAddItems',
+            entity__pb2.EditEntityArrayFieldAddItemsRequest.SerializeToString,
+            entity__pb2.EditEntityArrayFieldAddItemsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def EditEntityListFieldRemoveItems(request,
+    def EditEntityArrayFieldRemoveItems(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1371,9 +1371,9 @@ class KnitterGrpc(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/io.knitter.KnitterGrpc/EditEntityListFieldRemoveItems',
-            entity__pb2.EditEntityListFieldRemoveItemsRequest.SerializeToString,
-            entity__pb2.EditEntityListFieldRemoveItemsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/io.knitter.KnitterGrpc/EditEntityArrayFieldRemoveItems',
+            entity__pb2.EditEntityArrayFieldRemoveItemsRequest.SerializeToString,
+            entity__pb2.EditEntityArrayFieldRemoveItemsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
