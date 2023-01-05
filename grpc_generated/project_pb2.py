@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 import name_pb2 as name__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\rproject.proto\x12\nio.knitter\x1a\nname.proto\"\x95\x01\n\x11NewProjectRequest\x12\x1c\n\x04name\x18\x01 \x01(\x0b\x32\x0e.cashmere.Name\x12\x17\n\x0finner_root_path\x18\x02 \x01(\t\x12\x1a\n\x12\x65xternal_root_path\x18\x03 \x01(\t\x12\x0f\n\x07picture\x18\x04 \x01(\x0c\x12\x1c\n\x14\x61\x63\x63ociated_libraries\x18\x05 \x03(\t\"$\n\x12NewProjectResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\".\n\x18MarkProjectStatusRequest\x12\x12\n\nproject_id\x18\x01 \x01(\t\"+\n\x19MarkProjectStatusResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"W\n)AssociateAssetCollectionsToProjectRequest\x12\x12\n\nproject_id\x18\x01 \x01(\t\x12\x16\n\x0e\x63ollection_ids\x18\x02 \x01(\t\"<\n*AssociateAssetCollectionsToProjectResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"U\n\'AssociateSetCollectionsToProjectRequest\x12\x12\n\nproject_id\x18\x01 \x01(\t\x12\x16\n\x0e\x63ollection_ids\x18\x02 \x01(\t\":\n(AssociateSetCollectionsToProjectResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"Y\n+GetProjectAssociatedAssetCollectionsRequest\x12\x12\n\nproject_id\x18\x01 \x01(\t\x12\x16\n\x0e\x63ollection_ids\x18\x02 \x03(\t\"I\n,GetProjectAssociatedAssetCollectionsResponse\x12\x19\n\x11\x61sset_collections\x18\x01 \x03(\x0c\"[\n)GetProjectAssociatedSetCollectionsRequest\x12\x12\n\nproject_id\x18\x01 \x01(\t\x12\x1a\n\x12set_collection_ids\x18\x02 \x03(\t\"E\n*GetProjectAssociatedSetCollectionsResponse\x12\x17\n\x0fset_collections\x18\x01 \x03(\x0c\",\n\x16GetProjectEpicsRequest\x12\x12\n\nproject_id\x18\x01 \x01(\t\"(\n\x17GetProjectEpicsResponse\x12\r\n\x05\x65pics\x18\x01 \x03(\x0c\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\rproject.proto\x12\nio.knitter\x1a\nname.proto\"\x8c\x01\n\x11NewProjectRequest\x12\x1c\n\x04name\x18\x01 \x01(\x0b\x32\x0e.cashmere.Name\x12\x17\n\x0finner_root_path\x18\x02 \x01(\t\x12\x1a\n\x12\x65xternal_root_path\x18\x03 \x01(\t\x12\x0f\n\x07picture\x18\x04 \x01(\x0c\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\"$\n\x12NewProjectResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\".\n\x18MarkProjectStatusRequest\x12\x12\n\nproject_id\x18\x01 \x01(\t\"+\n\x19MarkProjectStatusResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"W\n)AssociateAssetCollectionsToProjectRequest\x12\x12\n\nproject_id\x18\x01 \x01(\t\x12\x16\n\x0e\x63ollection_ids\x18\x02 \x01(\t\"<\n*AssociateAssetCollectionsToProjectResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"U\n\'AssociateSetCollectionsToProjectRequest\x12\x12\n\nproject_id\x18\x01 \x01(\t\x12\x16\n\x0e\x63ollection_ids\x18\x02 \x01(\t\":\n(AssociateSetCollectionsToProjectResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"Y\n+GetProjectAssociatedAssetCollectionsRequest\x12\x12\n\nproject_id\x18\x01 \x01(\t\x12\x16\n\x0e\x63ollection_ids\x18\x02 \x03(\t\"I\n,GetProjectAssociatedAssetCollectionsResponse\x12\x19\n\x11\x61sset_collections\x18\x01 \x03(\x0c\"[\n)GetProjectAssociatedSetCollectionsRequest\x12\x12\n\nproject_id\x18\x01 \x01(\t\x12\x1a\n\x12set_collection_ids\x18\x02 \x03(\t\"E\n*GetProjectAssociatedSetCollectionsResponse\x12\x17\n\x0fset_collections\x18\x01 \x03(\x0c\",\n\x16GetProjectEpicsRequest\x12\x12\n\nproject_id\x18\x01 \x01(\t\"(\n\x17GetProjectEpicsResponse\x12\r\n\x05\x65pics\x18\x01 \x03(\x0c\x62\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'project_pb2', globals())
@@ -22,31 +22,31 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   _NEWPROJECTREQUEST._serialized_start=42
-  _NEWPROJECTREQUEST._serialized_end=191
-  _NEWPROJECTRESPONSE._serialized_start=193
-  _NEWPROJECTRESPONSE._serialized_end=229
-  _MARKPROJECTSTATUSREQUEST._serialized_start=231
-  _MARKPROJECTSTATUSREQUEST._serialized_end=277
-  _MARKPROJECTSTATUSRESPONSE._serialized_start=279
-  _MARKPROJECTSTATUSRESPONSE._serialized_end=322
-  _ASSOCIATEASSETCOLLECTIONSTOPROJECTREQUEST._serialized_start=324
-  _ASSOCIATEASSETCOLLECTIONSTOPROJECTREQUEST._serialized_end=411
-  _ASSOCIATEASSETCOLLECTIONSTOPROJECTRESPONSE._serialized_start=413
-  _ASSOCIATEASSETCOLLECTIONSTOPROJECTRESPONSE._serialized_end=473
-  _ASSOCIATESETCOLLECTIONSTOPROJECTREQUEST._serialized_start=475
-  _ASSOCIATESETCOLLECTIONSTOPROJECTREQUEST._serialized_end=560
-  _ASSOCIATESETCOLLECTIONSTOPROJECTRESPONSE._serialized_start=562
-  _ASSOCIATESETCOLLECTIONSTOPROJECTRESPONSE._serialized_end=620
-  _GETPROJECTASSOCIATEDASSETCOLLECTIONSREQUEST._serialized_start=622
-  _GETPROJECTASSOCIATEDASSETCOLLECTIONSREQUEST._serialized_end=711
-  _GETPROJECTASSOCIATEDASSETCOLLECTIONSRESPONSE._serialized_start=713
-  _GETPROJECTASSOCIATEDASSETCOLLECTIONSRESPONSE._serialized_end=786
-  _GETPROJECTASSOCIATEDSETCOLLECTIONSREQUEST._serialized_start=788
-  _GETPROJECTASSOCIATEDSETCOLLECTIONSREQUEST._serialized_end=879
-  _GETPROJECTASSOCIATEDSETCOLLECTIONSRESPONSE._serialized_start=881
-  _GETPROJECTASSOCIATEDSETCOLLECTIONSRESPONSE._serialized_end=950
-  _GETPROJECTEPICSREQUEST._serialized_start=952
-  _GETPROJECTEPICSREQUEST._serialized_end=996
-  _GETPROJECTEPICSRESPONSE._serialized_start=998
-  _GETPROJECTEPICSRESPONSE._serialized_end=1038
+  _NEWPROJECTREQUEST._serialized_end=182
+  _NEWPROJECTRESPONSE._serialized_start=184
+  _NEWPROJECTRESPONSE._serialized_end=220
+  _MARKPROJECTSTATUSREQUEST._serialized_start=222
+  _MARKPROJECTSTATUSREQUEST._serialized_end=268
+  _MARKPROJECTSTATUSRESPONSE._serialized_start=270
+  _MARKPROJECTSTATUSRESPONSE._serialized_end=313
+  _ASSOCIATEASSETCOLLECTIONSTOPROJECTREQUEST._serialized_start=315
+  _ASSOCIATEASSETCOLLECTIONSTOPROJECTREQUEST._serialized_end=402
+  _ASSOCIATEASSETCOLLECTIONSTOPROJECTRESPONSE._serialized_start=404
+  _ASSOCIATEASSETCOLLECTIONSTOPROJECTRESPONSE._serialized_end=464
+  _ASSOCIATESETCOLLECTIONSTOPROJECTREQUEST._serialized_start=466
+  _ASSOCIATESETCOLLECTIONSTOPROJECTREQUEST._serialized_end=551
+  _ASSOCIATESETCOLLECTIONSTOPROJECTRESPONSE._serialized_start=553
+  _ASSOCIATESETCOLLECTIONSTOPROJECTRESPONSE._serialized_end=611
+  _GETPROJECTASSOCIATEDASSETCOLLECTIONSREQUEST._serialized_start=613
+  _GETPROJECTASSOCIATEDASSETCOLLECTIONSREQUEST._serialized_end=702
+  _GETPROJECTASSOCIATEDASSETCOLLECTIONSRESPONSE._serialized_start=704
+  _GETPROJECTASSOCIATEDASSETCOLLECTIONSRESPONSE._serialized_end=777
+  _GETPROJECTASSOCIATEDSETCOLLECTIONSREQUEST._serialized_start=779
+  _GETPROJECTASSOCIATEDSETCOLLECTIONSREQUEST._serialized_end=870
+  _GETPROJECTASSOCIATEDSETCOLLECTIONSRESPONSE._serialized_start=872
+  _GETPROJECTASSOCIATEDSETCOLLECTIONSRESPONSE._serialized_end=941
+  _GETPROJECTEPICSREQUEST._serialized_start=943
+  _GETPROJECTEPICSREQUEST._serialized_end=987
+  _GETPROJECTEPICSRESPONSE._serialized_start=989
+  _GETPROJECTEPICSRESPONSE._serialized_end=1029
 # @@protoc_insertion_point(module_scope)

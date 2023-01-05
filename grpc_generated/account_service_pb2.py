@@ -13,15 +13,16 @@ _sym_db = _symbol_database.Default()
 
 import login_pb2 as login__pb2
 import account_pb2 as account__pb2
+import password_pb2 as password__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15\x61\x63\x63ount_service.proto\x12\x0f\x61\x63\x63ount_service\x1a\x0blogin.proto\x1a\raccount.proto2\x99\x03\n\x0b\x41\x63\x63ountGrpc\x12\x46\n\x05Login\x12\x1d.account_service.LoginRequest\x1a\x1e.account_service.LoginResponse\x12U\n\nNewAccount\x12\".account_service.NewAccountRequest\x1a#.account_service.NewAccountResponse\x12p\n\x13\x41\x64\x64\x41\x63\x63ountIntoGroup\x12+.account_service.AddAccountIntoGroupRequest\x1a,.account_service.AddAccountIntoGroupResponse\x12y\n\x16RemoveAccountFromGroup\x12..account_service.RemoveAccountFromGroupRequest\x1a/.account_service.RemoveAccountFromGroupResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15\x61\x63\x63ount_service.proto\x12\x0f\x61\x63\x63ount_service\x1a\x0blogin.proto\x1a\raccount.proto\x1a\x0epassword.proto2\x85\x04\n\x0b\x41\x63\x63ountGrpc\x12\x46\n\x05Login\x12\x1d.account_service.LoginRequest\x1a\x1e.account_service.LoginResponse\x12U\n\nNewAccount\x12\".account_service.NewAccountRequest\x1a#.account_service.NewAccountResponse\x12p\n\x13\x41\x64\x64\x41\x63\x63ountIntoGroup\x12+.account_service.AddAccountIntoGroupRequest\x1a,.account_service.AddAccountIntoGroupResponse\x12y\n\x16RemoveAccountFromGroup\x12..account_service.RemoveAccountFromGroupRequest\x1a/.account_service.RemoveAccountFromGroupResponse\x12j\n\x11\x43hangeOwnPassword\x12).account_service.ChangeOwnPasswordRequest\x1a*.account_service.ChangeOwnPasswordResponseb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'account_service_pb2', globals())
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  _ACCOUNTGRPC._serialized_start=71
-  _ACCOUNTGRPC._serialized_end=480
+  _ACCOUNTGRPC._serialized_start=87
+  _ACCOUNTGRPC._serialized_end=604
 # @@protoc_insertion_point(module_scope)

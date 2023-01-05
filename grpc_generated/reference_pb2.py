@@ -13,31 +13,31 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0freference.proto\x12\nio.knitter\"d\n\tReference\x12\x31\n\x0ereference_type\x18\x01 \x01(\x0e\x32\x19.io.knitter.ReferenceType\x12\x11\n\tsource_id\x18\x02 \x01(\t\x12\x11\n\tprefab_id\x18\x03 \x01(\t\"\x93\x01\n\x14\x41\x64\x64ReferencesRequest\x12\x19\n\x11subject_manage_id\x18\x01 \x01(\x05\x12\x19\n\x11subject_entity_id\x18\x02 \x01(\t\x12\x1a\n\x12reference_field_id\x18\x03 \x01(\t\x12)\n\nreferences\x18\x04 \x03(\x0b\x32\x15.io.knitter.Reference\"\'\n\x15\x41\x64\x64ReferencesResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"i\n\x15ListReferencesRequest\x12\x19\n\x11subject_manage_id\x18\x01 \x01(\x05\x12\x19\n\x11subject_entity_id\x18\x02 \x01(\t\x12\x1a\n\x12reference_field_id\x18\x03 \x01(\t\",\n\x16ListReferencesResponse\x12\x12\n\nreferences\x18\x01 \x03(\x0c\"\x96\x01\n\x17RemoveReferencesRequest\x12\x19\n\x11subject_manage_id\x18\x01 \x01(\x05\x12\x19\n\x11subject_entity_id\x18\x02 \x01(\t\x12\x1a\n\x12reference_field_id\x18\x03 \x01(\t\x12)\n\nreferences\x18\x04 \x03(\x0b\x32\x15.io.knitter.Reference\"*\n\x18RemoveReferencesResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"\xcc\x01\n\x1c\x43hangeReferencePrefabRequest\x12\x19\n\x11subject_manage_id\x18\x01 \x01(\x05\x12\x19\n\x11subject_entity_id\x18\x02 \x01(\t\x12\x1a\n\x12reference_field_id\x18\x03 \x01(\t\x12,\n\rold_reference\x18\x04 \x01(\x0b\x32\x15.io.knitter.Reference\x12,\n\rnew_reference\x18\x05 \x01(\x0b\x32\x15.io.knitter.Reference\"/\n\x1d\x43hangeReferencePrefabResponse\x12\x0e\n\x06result\x18\x01 \x01(\t*:\n\rReferenceType\x12\x0c\n\x08RefAsset\x10\x00\x12\x0f\n\x0bRefAssembly\x10\x01\x12\n\n\x06RefSet\x10\x02\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0freference.proto\x12\nio.knitter\"v\n\tReference\x12\x31\n\x0ereference_type\x18\x01 \x01(\x0e\x32\x19.io.knitter.ReferenceType\x12\x11\n\tsource_id\x18\x02 \x01(\t\x12\x10\n\x08specs_id\x18\x04 \x01(\t\x12\x11\n\tprefab_id\x18\x03 \x01(\t\"\x93\x01\n\x14\x41\x64\x64ReferencesRequest\x12\x19\n\x11subject_manage_id\x18\x01 \x01(\x05\x12\x19\n\x11subject_entity_id\x18\x02 \x01(\t\x12\x1a\n\x12reference_field_id\x18\x03 \x01(\t\x12)\n\nreferences\x18\x04 \x03(\x0b\x32\x15.io.knitter.Reference\"\'\n\x15\x41\x64\x64ReferencesResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"i\n\x15ListReferencesRequest\x12\x19\n\x11subject_manage_id\x18\x01 \x01(\x05\x12\x19\n\x11subject_entity_id\x18\x02 \x01(\t\x12\x1a\n\x12reference_field_id\x18\x03 \x01(\t\",\n\x16ListReferencesResponse\x12\x12\n\nreferences\x18\x01 \x03(\x0c\"\x96\x01\n\x17RemoveReferencesRequest\x12\x19\n\x11subject_manage_id\x18\x01 \x01(\x05\x12\x19\n\x11subject_entity_id\x18\x02 \x01(\t\x12\x1a\n\x12reference_field_id\x18\x03 \x01(\t\x12)\n\nreferences\x18\x04 \x03(\x0b\x32\x15.io.knitter.Reference\"*\n\x18RemoveReferencesResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"\xcc\x01\n\x1c\x43hangeReferencePrefabRequest\x12\x19\n\x11subject_manage_id\x18\x01 \x01(\x05\x12\x19\n\x11subject_entity_id\x18\x02 \x01(\t\x12\x1a\n\x12reference_field_id\x18\x03 \x01(\t\x12,\n\rold_reference\x18\x04 \x01(\x0b\x32\x15.io.knitter.Reference\x12,\n\rnew_reference\x18\x05 \x01(\x0b\x32\x15.io.knitter.Reference\"/\n\x1d\x43hangeReferencePrefabResponse\x12\x0e\n\x06result\x18\x01 \x01(\t*:\n\rReferenceType\x12\x0c\n\x08RefAsset\x10\x00\x12\x0f\n\x0bRefAssembly\x10\x01\x12\n\n\x06RefSet\x10\x02\x62\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'reference_pb2', globals())
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  _REFERENCETYPE._serialized_start=930
-  _REFERENCETYPE._serialized_end=988
+  _REFERENCETYPE._serialized_start=948
+  _REFERENCETYPE._serialized_end=1006
   _REFERENCE._serialized_start=31
-  _REFERENCE._serialized_end=131
-  _ADDREFERENCESREQUEST._serialized_start=134
-  _ADDREFERENCESREQUEST._serialized_end=281
-  _ADDREFERENCESRESPONSE._serialized_start=283
-  _ADDREFERENCESRESPONSE._serialized_end=322
-  _LISTREFERENCESREQUEST._serialized_start=324
-  _LISTREFERENCESREQUEST._serialized_end=429
-  _LISTREFERENCESRESPONSE._serialized_start=431
-  _LISTREFERENCESRESPONSE._serialized_end=475
-  _REMOVEREFERENCESREQUEST._serialized_start=478
-  _REMOVEREFERENCESREQUEST._serialized_end=628
-  _REMOVEREFERENCESRESPONSE._serialized_start=630
-  _REMOVEREFERENCESRESPONSE._serialized_end=672
-  _CHANGEREFERENCEPREFABREQUEST._serialized_start=675
-  _CHANGEREFERENCEPREFABREQUEST._serialized_end=879
-  _CHANGEREFERENCEPREFABRESPONSE._serialized_start=881
-  _CHANGEREFERENCEPREFABRESPONSE._serialized_end=928
+  _REFERENCE._serialized_end=149
+  _ADDREFERENCESREQUEST._serialized_start=152
+  _ADDREFERENCESREQUEST._serialized_end=299
+  _ADDREFERENCESRESPONSE._serialized_start=301
+  _ADDREFERENCESRESPONSE._serialized_end=340
+  _LISTREFERENCESREQUEST._serialized_start=342
+  _LISTREFERENCESREQUEST._serialized_end=447
+  _LISTREFERENCESRESPONSE._serialized_start=449
+  _LISTREFERENCESRESPONSE._serialized_end=493
+  _REMOVEREFERENCESREQUEST._serialized_start=496
+  _REMOVEREFERENCESREQUEST._serialized_end=646
+  _REMOVEREFERENCESRESPONSE._serialized_start=648
+  _REMOVEREFERENCESRESPONSE._serialized_end=690
+  _CHANGEREFERENCEPREFABREQUEST._serialized_start=693
+  _CHANGEREFERENCEPREFABREQUEST._serialized_end=897
+  _CHANGEREFERENCEPREFABRESPONSE._serialized_start=899
+  _CHANGEREFERENCEPREFABRESPONSE._serialized_end=946
 # @@protoc_insertion_point(module_scope)

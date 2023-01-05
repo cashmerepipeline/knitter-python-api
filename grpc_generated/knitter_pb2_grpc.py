@@ -102,6 +102,11 @@ class KnitterGrpcStub(object):
                 request_serializer=entity__pb2.GetEntitiesPageRequest.SerializeToString,
                 response_deserializer=entity__pb2.GetEntitiesPageResponse.FromString,
                 )
+        self.MarkEntityRemoved = channel.unary_unary(
+                '/io.knitter.KnitterGrpc/MarkEntityRemoved',
+                request_serializer=entity__pb2.MarkEntityRemovedRequest.SerializeToString,
+                response_deserializer=entity__pb2.MarkEntityRemovedResponse.FromString,
+                )
         self.EditEntityField = channel.unary_unary(
                 '/io.knitter.KnitterGrpc/EditEntityField',
                 request_serializer=entity__pb2.EditEntityFieldRequest.SerializeToString,
@@ -146,11 +151,6 @@ class KnitterGrpcStub(object):
                 '/io.knitter.KnitterGrpc/NewLanguageCode',
                 request_serializer=language__code__pb2.NewLanguageCodeRequest.SerializeToString,
                 response_deserializer=language__code__pb2.NewLanguageCodeResponse.FromString,
-                )
-        self.EditLanguageCode = channel.unary_unary(
-                '/io.knitter.KnitterGrpc/EditLanguageCode',
-                request_serializer=language__code__pb2.EditLanguageCodeRequest.SerializeToString,
-                response_deserializer=language__code__pb2.EditLanguageCodeResponse.FromString,
                 )
         self.NewGroup = channel.unary_unary(
                 '/io.knitter.KnitterGrpc/NewGroup',
@@ -227,38 +227,43 @@ class KnitterGrpcStub(object):
                 request_serializer=asset__collection__pb2.NewAssetCollectionRequest.SerializeToString,
                 response_deserializer=asset__collection__pb2.NewAssetCollectionResponse.FromString,
                 )
-        self.GetAssetCollectionAssociatedAssetsPage = channel.unary_unary(
-                '/io.knitter.KnitterGrpc/GetAssetCollectionAssociatedAssetsPage',
+        self.GetAssetCollectionAssetTotalPagesCount = channel.unary_unary(
+                '/io.knitter.KnitterGrpc/GetAssetCollectionAssetTotalPagesCount',
+                request_serializer=asset__collection__pb2.GetAssetCollectionAssetTotalPagesCountRequest.SerializeToString,
+                response_deserializer=asset__collection__pb2.GetAssetCollectionAssetTotalPagesCountResponse.FromString,
+                )
+        self.GetAssetCollectionAssemblyTotalPagesCount = channel.unary_unary(
+                '/io.knitter.KnitterGrpc/GetAssetCollectionAssemblyTotalPagesCount',
+                request_serializer=asset__collection__pb2.GetAssetCollectionAssemblyTotalPagesCountRequest.SerializeToString,
+                response_deserializer=asset__collection__pb2.GetAssetCollectionAssemblyTotalPagesCountResponse.FromString,
+                )
+        self.GetAssetCollectionAssetsPage = channel.unary_unary(
+                '/io.knitter.KnitterGrpc/GetAssetCollectionAssetsPage',
                 request_serializer=asset__collection__pb2.GetAssetCollectionAssetsPageRequest.SerializeToString,
                 response_deserializer=asset__collection__pb2.GetAssetCollectionAssetsPageResponse.FromString,
                 )
-        self.GetAssetCollectionAssociatedAssembliesPage = channel.unary_unary(
-                '/io.knitter.KnitterGrpc/GetAssetCollectionAssociatedAssembliesPage',
+        self.GetAssetCollectionAssembliesPage = channel.unary_unary(
+                '/io.knitter.KnitterGrpc/GetAssetCollectionAssembliesPage',
                 request_serializer=asset__collection__pb2.GetAssetCollectionAssembliesPageRequest.SerializeToString,
                 response_deserializer=asset__collection__pb2.GetAssetCollectionAssembliesPageResponse.FromString,
+                )
+        self.MarkAssetCollectionStatus = channel.unary_unary(
+                '/io.knitter.KnitterGrpc/MarkAssetCollectionStatus',
+                request_serializer=asset__collection__pb2.MarkAssetCollectionStatusRequest.SerializeToString,
+                response_deserializer=asset__collection__pb2.MarkAssetCollectionStatusResponse.FromString,
                 )
         self.NewAsset = channel.unary_unary(
                 '/io.knitter.KnitterGrpc/NewAsset',
                 request_serializer=asset__pb2.NewAssetRequest.SerializeToString,
                 response_deserializer=asset__pb2.NewAssetResponse.FromString,
                 )
-        self.GetAssetSpecses = channel.unary_unary(
-                '/io.knitter.KnitterGrpc/GetAssetSpecses',
-                request_serializer=asset__pb2.GetAssetSpecsesRequest.SerializeToString,
-                response_deserializer=asset__pb2.GetAssetSpecsesResponse.FromString,
-                )
-        self.GetAssetPrefabs = channel.unary_unary(
-                '/io.knitter.KnitterGrpc/GetAssetPrefabs',
-                request_serializer=asset__pb2.GetAssetPrefabsRequest.SerializeToString,
-                response_deserializer=asset__pb2.GetAssetPrefabsResponse.FromString,
-                )
         self.GetReferencedAssets = channel.unary_unary(
                 '/io.knitter.KnitterGrpc/GetReferencedAssets',
                 request_serializer=asset__pb2.GetReferencedAssetsRequest.SerializeToString,
                 response_deserializer=asset__pb2.GetReferencedAssetsResponse.FromString,
                 )
-        self.MarkAssetSatus = channel.unary_unary(
-                '/io.knitter.KnitterGrpc/MarkAssetSatus',
+        self.MarkAssetStatus = channel.unary_unary(
+                '/io.knitter.KnitterGrpc/MarkAssetStatus',
                 request_serializer=asset__pb2.MarkAssetStatusRequest.SerializeToString,
                 response_deserializer=asset__pb2.MarkAssetStatusResponse.FromString,
                 )
@@ -321,6 +326,16 @@ class KnitterGrpcStub(object):
                 '/io.knitter.KnitterGrpc/NewSpecs',
                 request_serializer=specs__pb2.NewSpecsRequest.SerializeToString,
                 response_deserializer=specs__pb2.NewSpecsResponse.FromString,
+                )
+        self.ListSpecs = channel.unary_unary(
+                '/io.knitter.KnitterGrpc/ListSpecs',
+                request_serializer=specs__pb2.ListSpecsRequest.SerializeToString,
+                response_deserializer=specs__pb2.ListSpecsResponse.FromString,
+                )
+        self.ListSpecsPrefabs = channel.unary_unary(
+                '/io.knitter.KnitterGrpc/ListSpecsPrefabs',
+                request_serializer=specs__pb2.ListSpecsPrefabsRequest.SerializeToString,
+                response_deserializer=specs__pb2.ListSpecsPrefabsResponse.FromString,
                 )
         self.NewPrefab = channel.unary_unary(
                 '/io.knitter.KnitterGrpc/NewPrefab',
@@ -433,6 +448,12 @@ class KnitterGrpcServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def MarkEntityRemoved(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def EditEntityField(self, request, context):
         """通用编辑实体属性，非数据结构
         """
@@ -489,12 +510,6 @@ class KnitterGrpcServicer(object):
     def NewLanguageCode(self, request, context):
         """语言编码
         """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def EditLanguageCode(self, request, context):
-        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -588,19 +603,37 @@ class KnitterGrpcServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def NewAssetCollection(self, request, context):
-        """库
+        """资产集 
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def GetAssetCollectionAssociatedAssetsPage(self, request, context):
+    def GetAssetCollectionAssetTotalPagesCount(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def GetAssetCollectionAssociatedAssembliesPage(self, request, context):
+    def GetAssetCollectionAssemblyTotalPagesCount(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetAssetCollectionAssetsPage(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetAssetCollectionAssembliesPage(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def MarkAssetCollectionStatus(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -613,25 +646,13 @@ class KnitterGrpcServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def GetAssetSpecses(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def GetAssetPrefabs(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
     def GetReferencedAssets(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def MarkAssetSatus(self, request, context):
+    def MarkAssetStatus(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -712,6 +733,18 @@ class KnitterGrpcServicer(object):
     def NewSpecs(self, request, context):
         """规格
         """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListSpecs(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListSpecsPrefabs(self, request, context):
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -816,6 +849,11 @@ def add_KnitterGrpcServicer_to_server(servicer, server):
                     request_deserializer=entity__pb2.GetEntitiesPageRequest.FromString,
                     response_serializer=entity__pb2.GetEntitiesPageResponse.SerializeToString,
             ),
+            'MarkEntityRemoved': grpc.unary_unary_rpc_method_handler(
+                    servicer.MarkEntityRemoved,
+                    request_deserializer=entity__pb2.MarkEntityRemovedRequest.FromString,
+                    response_serializer=entity__pb2.MarkEntityRemovedResponse.SerializeToString,
+            ),
             'EditEntityField': grpc.unary_unary_rpc_method_handler(
                     servicer.EditEntityField,
                     request_deserializer=entity__pb2.EditEntityFieldRequest.FromString,
@@ -860,11 +898,6 @@ def add_KnitterGrpcServicer_to_server(servicer, server):
                     servicer.NewLanguageCode,
                     request_deserializer=language__code__pb2.NewLanguageCodeRequest.FromString,
                     response_serializer=language__code__pb2.NewLanguageCodeResponse.SerializeToString,
-            ),
-            'EditLanguageCode': grpc.unary_unary_rpc_method_handler(
-                    servicer.EditLanguageCode,
-                    request_deserializer=language__code__pb2.EditLanguageCodeRequest.FromString,
-                    response_serializer=language__code__pb2.EditLanguageCodeResponse.SerializeToString,
             ),
             'NewGroup': grpc.unary_unary_rpc_method_handler(
                     servicer.NewGroup,
@@ -941,38 +974,43 @@ def add_KnitterGrpcServicer_to_server(servicer, server):
                     request_deserializer=asset__collection__pb2.NewAssetCollectionRequest.FromString,
                     response_serializer=asset__collection__pb2.NewAssetCollectionResponse.SerializeToString,
             ),
-            'GetAssetCollectionAssociatedAssetsPage': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetAssetCollectionAssociatedAssetsPage,
+            'GetAssetCollectionAssetTotalPagesCount': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetAssetCollectionAssetTotalPagesCount,
+                    request_deserializer=asset__collection__pb2.GetAssetCollectionAssetTotalPagesCountRequest.FromString,
+                    response_serializer=asset__collection__pb2.GetAssetCollectionAssetTotalPagesCountResponse.SerializeToString,
+            ),
+            'GetAssetCollectionAssemblyTotalPagesCount': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetAssetCollectionAssemblyTotalPagesCount,
+                    request_deserializer=asset__collection__pb2.GetAssetCollectionAssemblyTotalPagesCountRequest.FromString,
+                    response_serializer=asset__collection__pb2.GetAssetCollectionAssemblyTotalPagesCountResponse.SerializeToString,
+            ),
+            'GetAssetCollectionAssetsPage': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetAssetCollectionAssetsPage,
                     request_deserializer=asset__collection__pb2.GetAssetCollectionAssetsPageRequest.FromString,
                     response_serializer=asset__collection__pb2.GetAssetCollectionAssetsPageResponse.SerializeToString,
             ),
-            'GetAssetCollectionAssociatedAssembliesPage': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetAssetCollectionAssociatedAssembliesPage,
+            'GetAssetCollectionAssembliesPage': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetAssetCollectionAssembliesPage,
                     request_deserializer=asset__collection__pb2.GetAssetCollectionAssembliesPageRequest.FromString,
                     response_serializer=asset__collection__pb2.GetAssetCollectionAssembliesPageResponse.SerializeToString,
+            ),
+            'MarkAssetCollectionStatus': grpc.unary_unary_rpc_method_handler(
+                    servicer.MarkAssetCollectionStatus,
+                    request_deserializer=asset__collection__pb2.MarkAssetCollectionStatusRequest.FromString,
+                    response_serializer=asset__collection__pb2.MarkAssetCollectionStatusResponse.SerializeToString,
             ),
             'NewAsset': grpc.unary_unary_rpc_method_handler(
                     servicer.NewAsset,
                     request_deserializer=asset__pb2.NewAssetRequest.FromString,
                     response_serializer=asset__pb2.NewAssetResponse.SerializeToString,
             ),
-            'GetAssetSpecses': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetAssetSpecses,
-                    request_deserializer=asset__pb2.GetAssetSpecsesRequest.FromString,
-                    response_serializer=asset__pb2.GetAssetSpecsesResponse.SerializeToString,
-            ),
-            'GetAssetPrefabs': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetAssetPrefabs,
-                    request_deserializer=asset__pb2.GetAssetPrefabsRequest.FromString,
-                    response_serializer=asset__pb2.GetAssetPrefabsResponse.SerializeToString,
-            ),
             'GetReferencedAssets': grpc.unary_unary_rpc_method_handler(
                     servicer.GetReferencedAssets,
                     request_deserializer=asset__pb2.GetReferencedAssetsRequest.FromString,
                     response_serializer=asset__pb2.GetReferencedAssetsResponse.SerializeToString,
             ),
-            'MarkAssetSatus': grpc.unary_unary_rpc_method_handler(
-                    servicer.MarkAssetSatus,
+            'MarkAssetStatus': grpc.unary_unary_rpc_method_handler(
+                    servicer.MarkAssetStatus,
                     request_deserializer=asset__pb2.MarkAssetStatusRequest.FromString,
                     response_serializer=asset__pb2.MarkAssetStatusResponse.SerializeToString,
             ),
@@ -1035,6 +1073,16 @@ def add_KnitterGrpcServicer_to_server(servicer, server):
                     servicer.NewSpecs,
                     request_deserializer=specs__pb2.NewSpecsRequest.FromString,
                     response_serializer=specs__pb2.NewSpecsResponse.SerializeToString,
+            ),
+            'ListSpecs': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListSpecs,
+                    request_deserializer=specs__pb2.ListSpecsRequest.FromString,
+                    response_serializer=specs__pb2.ListSpecsResponse.SerializeToString,
+            ),
+            'ListSpecsPrefabs': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListSpecsPrefabs,
+                    request_deserializer=specs__pb2.ListSpecsPrefabsRequest.FromString,
+                    response_serializer=specs__pb2.ListSpecsPrefabsResponse.SerializeToString,
             ),
             'NewPrefab': grpc.unary_unary_rpc_method_handler(
                     servicer.NewPrefab,
@@ -1293,6 +1341,23 @@ class KnitterGrpc(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
+    def MarkEntityRemoved(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/io.knitter.KnitterGrpc/MarkEntityRemoved',
+            entity__pb2.MarkEntityRemovedRequest.SerializeToString,
+            entity__pb2.MarkEntityRemovedResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
     def EditEntityField(request,
             target,
             options=(),
@@ -1442,23 +1507,6 @@ class KnitterGrpc(object):
         return grpc.experimental.unary_unary(request, target, '/io.knitter.KnitterGrpc/NewLanguageCode',
             language__code__pb2.NewLanguageCodeRequest.SerializeToString,
             language__code__pb2.NewLanguageCodeResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def EditLanguageCode(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/io.knitter.KnitterGrpc/EditLanguageCode',
-            language__code__pb2.EditLanguageCodeRequest.SerializeToString,
-            language__code__pb2.EditLanguageCodeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1718,7 +1766,7 @@ class KnitterGrpc(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def GetAssetCollectionAssociatedAssetsPage(request,
+    def GetAssetCollectionAssetTotalPagesCount(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1728,14 +1776,48 @@ class KnitterGrpc(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/io.knitter.KnitterGrpc/GetAssetCollectionAssociatedAssetsPage',
+        return grpc.experimental.unary_unary(request, target, '/io.knitter.KnitterGrpc/GetAssetCollectionAssetTotalPagesCount',
+            asset__collection__pb2.GetAssetCollectionAssetTotalPagesCountRequest.SerializeToString,
+            asset__collection__pb2.GetAssetCollectionAssetTotalPagesCountResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetAssetCollectionAssemblyTotalPagesCount(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/io.knitter.KnitterGrpc/GetAssetCollectionAssemblyTotalPagesCount',
+            asset__collection__pb2.GetAssetCollectionAssemblyTotalPagesCountRequest.SerializeToString,
+            asset__collection__pb2.GetAssetCollectionAssemblyTotalPagesCountResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetAssetCollectionAssetsPage(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/io.knitter.KnitterGrpc/GetAssetCollectionAssetsPage',
             asset__collection__pb2.GetAssetCollectionAssetsPageRequest.SerializeToString,
             asset__collection__pb2.GetAssetCollectionAssetsPageResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def GetAssetCollectionAssociatedAssembliesPage(request,
+    def GetAssetCollectionAssembliesPage(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1745,9 +1827,26 @@ class KnitterGrpc(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/io.knitter.KnitterGrpc/GetAssetCollectionAssociatedAssembliesPage',
+        return grpc.experimental.unary_unary(request, target, '/io.knitter.KnitterGrpc/GetAssetCollectionAssembliesPage',
             asset__collection__pb2.GetAssetCollectionAssembliesPageRequest.SerializeToString,
             asset__collection__pb2.GetAssetCollectionAssembliesPageResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def MarkAssetCollectionStatus(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/io.knitter.KnitterGrpc/MarkAssetCollectionStatus',
+            asset__collection__pb2.MarkAssetCollectionStatusRequest.SerializeToString,
+            asset__collection__pb2.MarkAssetCollectionStatusResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1769,40 +1868,6 @@ class KnitterGrpc(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def GetAssetSpecses(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/io.knitter.KnitterGrpc/GetAssetSpecses',
-            asset__pb2.GetAssetSpecsesRequest.SerializeToString,
-            asset__pb2.GetAssetSpecsesResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def GetAssetPrefabs(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/io.knitter.KnitterGrpc/GetAssetPrefabs',
-            asset__pb2.GetAssetPrefabsRequest.SerializeToString,
-            asset__pb2.GetAssetPrefabsResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
     def GetReferencedAssets(request,
             target,
             options=(),
@@ -1820,7 +1885,7 @@ class KnitterGrpc(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def MarkAssetSatus(request,
+    def MarkAssetStatus(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1830,7 +1895,7 @@ class KnitterGrpc(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/io.knitter.KnitterGrpc/MarkAssetSatus',
+        return grpc.experimental.unary_unary(request, target, '/io.knitter.KnitterGrpc/MarkAssetStatus',
             asset__pb2.MarkAssetStatusRequest.SerializeToString,
             asset__pb2.MarkAssetStatusResponse.FromString,
             options, channel_credentials,
@@ -2037,6 +2102,40 @@ class KnitterGrpc(object):
         return grpc.experimental.unary_unary(request, target, '/io.knitter.KnitterGrpc/NewSpecs',
             specs__pb2.NewSpecsRequest.SerializeToString,
             specs__pb2.NewSpecsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListSpecs(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/io.knitter.KnitterGrpc/ListSpecs',
+            specs__pb2.ListSpecsRequest.SerializeToString,
+            specs__pb2.ListSpecsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListSpecsPrefabs(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/io.knitter.KnitterGrpc/ListSpecsPrefabs',
+            specs__pb2.ListSpecsPrefabsRequest.SerializeToString,
+            specs__pb2.ListSpecsPrefabsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

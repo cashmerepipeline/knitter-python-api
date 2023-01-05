@@ -1,6 +1,7 @@
 import grpc
 
 from grpc_generated.knitter_pb2_grpc import KnitterGrpcStub
+from entity_pb2 import MarkEntityRemovedRequest
 
 async def add_references(request, stub: KnitterGrpcStub, metadata):
     try:

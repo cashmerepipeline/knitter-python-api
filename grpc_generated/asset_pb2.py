@@ -15,31 +15,25 @@ import name_pb2 as name__pb2
 import reference_pb2 as reference__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0b\x61sset.proto\x12\nio.knitter\x1a\nname.proto\x1a\x0freference.proto\"m\n\x0fNewAssetRequest\x12\x12\n\nlibrary_id\x18\x01 \x01(\t\x12\x1c\n\x04name\x18\x02 \x01(\x0b\x32\x0e.cashmere.Name\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x13\n\x0btemplate_id\x18\x04 \x01(\t\"\"\n\x10NewAssetResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"*\n\x16GetAssetSpecsesRequest\x12\x10\n\x08\x61sset_id\x18\x01 \x01(\t\"*\n\x17GetAssetSpecsesResponse\x12\x0f\n\x07specses\x18\x01 \x03(\x0c\"*\n\x16GetAssetPrefabsRequest\x12\x10\n\x08\x61sset_id\x18\x01 \x01(\t\"*\n\x17GetAssetPrefabsResponse\x12\x0f\n\x07prefabs\x18\x01 \x03(\x0c\"*\n\x16MarkAssetStatusRequest\x12\x10\n\x08\x61sset_id\x18\x01 \x01(\t\")\n\x17MarkAssetStatusResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"U\n\x1aGetReferencedAssetsRequest\x12\x11\n\tmanage_id\x18\x01 \x01(\x05\x12\x11\n\tentity_id\x18\x02 \x01(\t\x12\x11\n\tasset_ids\x18\x03 \x03(\t\"-\n\x1bGetReferencedAssetsResponse\x12\x0e\n\x06\x61ssets\x18\x01 \x03(\x0c\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0b\x61sset.proto\x12\nio.knitter\x1a\nname.proto\x1a\x0freference.proto\"a\n\x0fNewAssetRequest\x12\x1b\n\x13\x61sset_collection_id\x18\x01 \x01(\t\x12\x1c\n\x04name\x18\x02 \x01(\x0b\x32\x0e.cashmere.Name\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\"\"\n\x10NewAssetResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"S\n\x16MarkAssetStatusRequest\x12\x10\n\x08\x61sset_id\x18\x01 \x01(\t\x12\'\n\x06status\x18\x02 \x01(\x0e\x32\x17.io.knitter.AssetStatus\")\n\x17MarkAssetStatusResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"U\n\x1aGetReferencedAssetsRequest\x12\x11\n\tmanage_id\x18\x01 \x01(\x05\x12\x11\n\tentity_id\x18\x02 \x01(\t\x12\x11\n\tasset_ids\x18\x03 \x03(\t\"-\n\x1bGetReferencedAssetsResponse\x12\x0e\n\x06\x61ssets\x18\x01 \x03(\x0c*C\n\x0b\x41ssetStatus\x12\r\n\tAssetDone\x10\x00\x12\x12\n\x0e\x41ssetSuspended\x10\x01\x12\x11\n\rAssetCanceled\x10\x02\x62\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'asset_pb2', globals())
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
+  _ASSETSTATUS._serialized_start=453
+  _ASSETSTATUS._serialized_end=520
   _NEWASSETREQUEST._serialized_start=56
-  _NEWASSETREQUEST._serialized_end=165
-  _NEWASSETRESPONSE._serialized_start=167
-  _NEWASSETRESPONSE._serialized_end=201
-  _GETASSETSPECSESREQUEST._serialized_start=203
-  _GETASSETSPECSESREQUEST._serialized_end=245
-  _GETASSETSPECSESRESPONSE._serialized_start=247
-  _GETASSETSPECSESRESPONSE._serialized_end=289
-  _GETASSETPREFABSREQUEST._serialized_start=291
-  _GETASSETPREFABSREQUEST._serialized_end=333
-  _GETASSETPREFABSRESPONSE._serialized_start=335
-  _GETASSETPREFABSRESPONSE._serialized_end=377
-  _MARKASSETSTATUSREQUEST._serialized_start=379
-  _MARKASSETSTATUSREQUEST._serialized_end=421
-  _MARKASSETSTATUSRESPONSE._serialized_start=423
-  _MARKASSETSTATUSRESPONSE._serialized_end=464
-  _GETREFERENCEDASSETSREQUEST._serialized_start=466
-  _GETREFERENCEDASSETSREQUEST._serialized_end=551
-  _GETREFERENCEDASSETSRESPONSE._serialized_start=553
-  _GETREFERENCEDASSETSRESPONSE._serialized_end=598
+  _NEWASSETREQUEST._serialized_end=153
+  _NEWASSETRESPONSE._serialized_start=155
+  _NEWASSETRESPONSE._serialized_end=189
+  _MARKASSETSTATUSREQUEST._serialized_start=191
+  _MARKASSETSTATUSREQUEST._serialized_end=274
+  _MARKASSETSTATUSRESPONSE._serialized_start=276
+  _MARKASSETSTATUSRESPONSE._serialized_end=317
+  _GETREFERENCEDASSETSREQUEST._serialized_start=319
+  _GETREFERENCEDASSETSREQUEST._serialized_end=404
+  _GETREFERENCEDASSETSRESPONSE._serialized_start=406
+  _GETREFERENCEDASSETSRESPONSE._serialized_end=451
 # @@protoc_insertion_point(module_scope)

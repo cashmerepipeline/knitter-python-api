@@ -1,6 +1,7 @@
 import grpc
 
 from grpc_generated.knitter_pb2_grpc import KnitterGrpcStub
+from entity_pb2 import MarkEntityRemovedRequest
 
 async def new_sequence(request, stub: KnitterGrpcStub, metadata):
     try:

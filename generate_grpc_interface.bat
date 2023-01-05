@@ -1,6 +1,7 @@
 python -m grpc_tools.protoc -I../cashmere_core/protocols -I../cashmere_core/account_server/protocols --python_out=./grpc_generated/ --grpc_python_out=./grpc_generated  ../cashmere_core/account_server/protocols/account_service.proto
 
 python -m grpc_tools.protoc -I../cashmere_core/protocols -I../cashmere_core/account_server/protocols --python_out=./grpc_generated/  ../cashmere_core/account_server/protocols/account.proto
+python -m grpc_tools.protoc -I../cashmere_core/protocols -I../cashmere_core/account_server/protocols --python_out=./grpc_generated/  ../cashmere_core/account_server/protocols/password.proto
 python -m grpc_tools.protoc -I../cashmere_core/protocols -I../cashmere_core/account_server/protocols --python_out=./grpc_generated/  ../cashmere_core/account_server/protocols/login.proto
 python -m grpc_tools.protoc -I../cashmere_core/protocols -I../cashmere_core/account_server/protocols --python_out=./grpc_generated/  ../cashmere_core/account_server/protocols/status.proto
 
@@ -32,7 +33,6 @@ python -m grpc_tools.protoc -I../cashmere_core/protocols --python_out=./grpc_gen
 python -m grpc_tools.protoc -I../cashmere_core/protocols --python_out=./grpc_generated/   ../cashmere_core/protocols/property_type.proto
 python -m grpc_tools.protoc -I../cashmere_core/protocols --python_out=./grpc_generated/   ../cashmere_core/protocols/question.proto
 python -m grpc_tools.protoc -I../cashmere_core/protocols --python_out=./grpc_generated/   ../cashmere_core/protocols/range.proto
-python -m grpc_tools.protoc -I../cashmere_core/protocols --python_out=./grpc_generated/   ../cashmere_core/protocols/readme.md
 python -m grpc_tools.protoc -I../cashmere_core/protocols --python_out=./grpc_generated/   ../cashmere_core/protocols/results.proto
 python -m grpc_tools.protoc -I../cashmere_core/protocols --python_out=./grpc_generated/   ../cashmere_core/protocols/season.proto
 python -m grpc_tools.protoc -I../cashmere_core/protocols --python_out=./grpc_generated/   ../cashmere_core/protocols/sequence_data.proto
@@ -64,4 +64,3 @@ python -m grpc_tools.protoc -I../knitter/protocols -I../cashmere_core/protocols 
 python -m grpc_tools.protoc -I../knitter/protocols -I../cashmere_core/protocols --python_out=./grpc_generated/  ../knitter/protocols/set_collection.proto
 python -m grpc_tools.protoc -I../knitter/protocols -I../cashmere_core/protocols --python_out=./grpc_generated/  ../knitter/protocols/specs.proto
 python -m grpc_tools.protoc -I../knitter/protocols -I../cashmere_core/protocols --python_out=./grpc_generated/  ../knitter/protocols/project.proto
-python -m grpc_tools.protoc -I../knitter/protocols -I../cashmere_core/protocols --python_out=./grpc_generated/  ../knitter/protocols/library.proto

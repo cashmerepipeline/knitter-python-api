@@ -47,3 +47,11 @@ async def remove_account_from_group(request, stub, metadata):
         # print(e.code(), None, e.details())
         return (e.code(), None, e.details())
 
+async def change_own_password(request, stub, metadata):
+    try:
+        response = stub.ChangeOwnPassword(request, metadata=metadata)
+        return (grpc.StatusCode.OK, response, None)
+    except grpc.RpcError as e:
+        # print(e.code(), None, e.details())
+        return (e.code(), None, e.details())
+

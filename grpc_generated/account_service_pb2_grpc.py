@@ -4,6 +4,7 @@ import grpc
 
 import account_pb2 as account__pb2
 import login_pb2 as login__pb2
+import password_pb2 as password__pb2
 
 
 class AccountGrpcStub(object):
@@ -35,6 +36,11 @@ class AccountGrpcStub(object):
                 request_serializer=account__pb2.RemoveAccountFromGroupRequest.SerializeToString,
                 response_deserializer=account__pb2.RemoveAccountFromGroupResponse.FromString,
                 )
+        self.ChangeOwnPassword = channel.unary_unary(
+                '/account_service.AccountGrpc/ChangeOwnPassword',
+                request_serializer=password__pb2.ChangeOwnPasswordRequest.SerializeToString,
+                response_deserializer=password__pb2.ChangeOwnPasswordResponse.FromString,
+                )
 
 
 class AccountGrpcServicer(object):
@@ -49,20 +55,27 @@ class AccountGrpcServicer(object):
 
     def NewAccount(self, request, context):
         """rpc Logout (LogoutRequest) returns (LogoutResponse);
+        rpc Register (RegisterRequest) returns (RegisterResponse);
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def AddAccountIntoGroup(self, request, context):
-        """rpc Register (RegisterRequest) returns (RegisterResponse);
-        """
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def RemoveAccountFromGroup(self, request, context):
         """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ChangeOwnPassword(self, request, context):
+        """修改自身密码
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -89,6 +102,11 @@ def add_AccountGrpcServicer_to_server(servicer, server):
                     servicer.RemoveAccountFromGroup,
                     request_deserializer=account__pb2.RemoveAccountFromGroupRequest.FromString,
                     response_serializer=account__pb2.RemoveAccountFromGroupResponse.SerializeToString,
+            ),
+            'ChangeOwnPassword': grpc.unary_unary_rpc_method_handler(
+                    servicer.ChangeOwnPassword,
+                    request_deserializer=password__pb2.ChangeOwnPasswordRequest.FromString,
+                    response_serializer=password__pb2.ChangeOwnPasswordResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -165,5 +183,22 @@ class AccountGrpc(object):
         return grpc.experimental.unary_unary(request, target, '/account_service.AccountGrpc/RemoveAccountFromGroup',
             account__pb2.RemoveAccountFromGroupRequest.SerializeToString,
             account__pb2.RemoveAccountFromGroupResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ChangeOwnPassword(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/account_service.AccountGrpc/ChangeOwnPassword',
+            password__pb2.ChangeOwnPasswordRequest.SerializeToString,
+            password__pb2.ChangeOwnPasswordResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

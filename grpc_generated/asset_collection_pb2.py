@@ -14,23 +14,37 @@ _sym_db = _symbol_database.Default()
 import name_pb2 as name__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16\x61sset_collection.proto\x12\nio.knitter\x1a\nname.proto\"\x94\x01\n\x19NewAssetCollectionRequest\x12\x1c\n\x04name\x18\x01 \x01(\x0b\x32\x0e.cashmere.Name\x12\x17\n\x0finner_root_path\x18\x02 \x01(\t\x12\x1a\n\x12\x65xternal_root_path\x18\x03 \x01(\t\x12\x0f\n\x07picture\x18\x04 \x01(\x0c\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\",\n\x1aNewAssetCollectionResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"j\n#GetAssetCollectionAssetsPageRequest\x12\x15\n\rcollection_id\x18\x01 \x01(\t\x12\x12\n\npage_index\x18\x02 \x01(\r\x12\x18\n\x10total_page_count\x18\x03 \x01(\r\"6\n$GetAssetCollectionAssetsPageResponse\x12\x0e\n\x06\x61ssets\x18\x01 \x03(\x0c\"n\n\'GetAssetCollectionAssembliesPageRequest\x12\x15\n\rcollection_id\x18\x01 \x01(\t\x12\x12\n\npage_index\x18\x02 \x01(\r\x12\x18\n\x10total_page_count\x18\x03 \x01(\r\">\n(GetAssetCollectionAssembliesPageResponse\x12\x12\n\nassemblies\x18\x01 \x03(\x0c\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16\x61sset_collection.proto\x12\nio.knitter\x1a\nname.proto\"\x94\x01\n\x19NewAssetCollectionRequest\x12\x1c\n\x04name\x18\x01 \x01(\x0b\x32\x0e.cashmere.Name\x12\x17\n\x0finner_root_path\x18\x02 \x01(\t\x12\x1a\n\x12\x65xternal_root_path\x18\x03 \x01(\t\x12\x0f\n\x07picture\x18\x04 \x01(\x0c\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\",\n\x1aNewAssetCollectionResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"F\n-GetAssetCollectionAssetTotalPagesCountRequest\x12\x15\n\rcollection_id\x18\x01 \x01(\t\"E\n.GetAssetCollectionAssetTotalPagesCountResponse\x12\x13\n\x0btotal_count\x18\x01 \x01(\r\"J\n0GetAssetCollectionAssemblyTotalPagesCountRequest\x12\x16\n\x0e\x63olllection_id\x18\x01 \x01(\t\"H\n1GetAssetCollectionAssemblyTotalPagesCountResponse\x12\x13\n\x0btotao_count\x18\x01 \x01(\r\"k\n#GetAssetCollectionAssetsPageRequest\x12\x15\n\rcollection_id\x18\x01 \x01(\t\x12\x12\n\npage_index\x18\x02 \x01(\r\x12\x19\n\x11total_pages_count\x18\x03 \x01(\r\"6\n$GetAssetCollectionAssetsPageResponse\x12\x0e\n\x06\x61ssets\x18\x01 \x03(\x0c\"o\n\'GetAssetCollectionAssembliesPageRequest\x12\x15\n\rcollection_id\x18\x01 \x01(\t\x12\x12\n\npage_index\x18\x02 \x01(\r\x12\x19\n\x11total_pages_count\x18\x03 \x01(\r\">\n(GetAssetCollectionAssembliesPageResponse\x12\x12\n\nassemblies\x18\x01 \x03(\x0c\"l\n MarkAssetCollectionStatusRequest\x12\x15\n\rcollection_id\x18\x01 \x01(\t\x12\x31\n\x06status\x18\x02 \x01(\x0e\x32!.io.knitter.AssetCollectionStatus\"V\n!MarkAssetCollectionStatusResponse\x12\x31\n\x06status\x18\x01 \x01(\x0e\x32!.io.knitter.AssetCollectionStatus*O\n\x15\x41ssetCollectionStatus\x12\x19\n\x15\x41ssetCollectionClosed\x10\x00\x12\x1b\n\x17\x41ssetCollectionOpenning\x10\x01\x62\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'asset_collection_pb2', globals())
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
+  _ASSETCOLLECTIONSTATUS._serialized_start=1080
+  _ASSETCOLLECTIONSTATUS._serialized_end=1159
   _NEWASSETCOLLECTIONREQUEST._serialized_start=51
   _NEWASSETCOLLECTIONREQUEST._serialized_end=199
   _NEWASSETCOLLECTIONRESPONSE._serialized_start=201
   _NEWASSETCOLLECTIONRESPONSE._serialized_end=245
-  _GETASSETCOLLECTIONASSETSPAGEREQUEST._serialized_start=247
-  _GETASSETCOLLECTIONASSETSPAGEREQUEST._serialized_end=353
-  _GETASSETCOLLECTIONASSETSPAGERESPONSE._serialized_start=355
-  _GETASSETCOLLECTIONASSETSPAGERESPONSE._serialized_end=409
-  _GETASSETCOLLECTIONASSEMBLIESPAGEREQUEST._serialized_start=411
-  _GETASSETCOLLECTIONASSEMBLIESPAGEREQUEST._serialized_end=521
-  _GETASSETCOLLECTIONASSEMBLIESPAGERESPONSE._serialized_start=523
-  _GETASSETCOLLECTIONASSEMBLIESPAGERESPONSE._serialized_end=585
+  _GETASSETCOLLECTIONASSETTOTALPAGESCOUNTREQUEST._serialized_start=247
+  _GETASSETCOLLECTIONASSETTOTALPAGESCOUNTREQUEST._serialized_end=317
+  _GETASSETCOLLECTIONASSETTOTALPAGESCOUNTRESPONSE._serialized_start=319
+  _GETASSETCOLLECTIONASSETTOTALPAGESCOUNTRESPONSE._serialized_end=388
+  _GETASSETCOLLECTIONASSEMBLYTOTALPAGESCOUNTREQUEST._serialized_start=390
+  _GETASSETCOLLECTIONASSEMBLYTOTALPAGESCOUNTREQUEST._serialized_end=464
+  _GETASSETCOLLECTIONASSEMBLYTOTALPAGESCOUNTRESPONSE._serialized_start=466
+  _GETASSETCOLLECTIONASSEMBLYTOTALPAGESCOUNTRESPONSE._serialized_end=538
+  _GETASSETCOLLECTIONASSETSPAGEREQUEST._serialized_start=540
+  _GETASSETCOLLECTIONASSETSPAGEREQUEST._serialized_end=647
+  _GETASSETCOLLECTIONASSETSPAGERESPONSE._serialized_start=649
+  _GETASSETCOLLECTIONASSETSPAGERESPONSE._serialized_end=703
+  _GETASSETCOLLECTIONASSEMBLIESPAGEREQUEST._serialized_start=705
+  _GETASSETCOLLECTIONASSEMBLIESPAGEREQUEST._serialized_end=816
+  _GETASSETCOLLECTIONASSEMBLIESPAGERESPONSE._serialized_start=818
+  _GETASSETCOLLECTIONASSEMBLIESPAGERESPONSE._serialized_end=880
+  _MARKASSETCOLLECTIONSTATUSREQUEST._serialized_start=882
+  _MARKASSETCOLLECTIONSTATUSREQUEST._serialized_end=990
+  _MARKASSETCOLLECTIONSTATUSRESPONSE._serialized_start=992
+  _MARKASSETCOLLECTIONSTATUSRESPONSE._serialized_end=1078
 # @@protoc_insertion_point(module_scope)
