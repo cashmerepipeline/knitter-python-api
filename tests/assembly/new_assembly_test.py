@@ -9,8 +9,11 @@ from common_services.name import new_language_name
 from id_codes.general_field_ids import OWNER_FIELD_ID
 from id_codes.manage_ids import MANAGES_MANAGE_ID
 from knitter_client import get_knitter_client_stub, login
-from asset_collection_pb2 import GetAssetCollectionAssetsPageRequest
-from knitter_services.asset_collection import get_asset_collection_assets_page, new_asset_collection
+from assembly_pb2 import NewAssemblyRequest
+from knitter_services.assembly import new_assembly
+from knitter_services.asset import new_asset
+from knitter_services.asset_collection import new_asset_collection
+from knitter_services.project import new_project
 from name_pb2 import Name
 from test_settings import *
 
@@ -19,21 +22,20 @@ async def main():
     metadata, person = await login(area_code, phone, passwd, insecure_channel)
 
     client_stub = get_knitter_client_stub(channel=insecure_channel)
-
-    request = GetAssetCollectionAssetsPageRequest(
-            collection_id = "1",
-            page_index = 0,
-            total_pages_count = 1
+    name = Name(language="zh", name="测试组合")
+    request = NewAssemblyRequest(
+        name=name,
+        asset_collection_id="0",
+        description="test new assembly"
     )
 
-    ok, m_response, details = await get_asset_collection_assets_page(
+    ok, m_response, details = await new_assembly(
         request, client_stub, metadata=metadata
     )
 
     # 打印管理表
     if ok == grpc.StatusCode.OK:
-        for asset in m_response.assets:
-            print(bson.decode(asset))
+        print(m_response.result)
     else:
         error("发生错误%s-%s" % (ok, details))
         return
