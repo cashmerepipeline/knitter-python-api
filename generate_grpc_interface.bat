@@ -3,7 +3,7 @@ python -m grpc_tools.protoc -I../cashmere_core/protocols -I../cashmere_core/acco
 python -m grpc_tools.protoc -I../cashmere_core/protocols -I../cashmere_core/account_server/protocols --python_out=./grpc_generated/  ../cashmere_core/account_server/protocols/account.proto
 python -m grpc_tools.protoc -I../cashmere_core/protocols -I../cashmere_core/account_server/protocols --python_out=./grpc_generated/  ../cashmere_core/account_server/protocols/password.proto
 python -m grpc_tools.protoc -I../cashmere_core/protocols -I../cashmere_core/account_server/protocols --python_out=./grpc_generated/  ../cashmere_core/account_server/protocols/login.proto
-python -m grpc_tools.protoc -I../cashmere_core/protocols -I../cashmere_core/account_server/protocols --python_out=./grpc_generated/  ../cashmere_core/account_server/protocols/status.proto
+python -m grpc_tools.protoc -I../cashmere_core/protocols -I../cashmere_core/account_server/protocols --python_out=./grpc_generated/  ../cashmere_core/account_server/protocols/account_status.proto
 
 python -m grpc_tools.protoc -I../cashmere_core/protocols --python_out=./grpc_generated/   ../cashmere_core/protocols/answer.proto
 python -m grpc_tools.protoc -I../cashmere_core/protocols --python_out=./grpc_generated/   ../cashmere_core/protocols/area.proto

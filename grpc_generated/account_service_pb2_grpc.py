@@ -41,6 +41,16 @@ class AccountGrpcStub(object):
                 request_serializer=password__pb2.ChangeOwnPasswordRequest.SerializeToString,
                 response_deserializer=password__pb2.ChangeOwnPasswordResponse.FromString,
                 )
+        self.ChangeAccountStatus = channel.unary_unary(
+                '/account_service.AccountGrpc/ChangeAccountStatus',
+                request_serializer=account__pb2.ChangeAccountStatusRequest.SerializeToString,
+                response_deserializer=account__pb2.ChangeAccountStatusResponse.FromString,
+                )
+        self.ChangeAccountPassword = channel.unary_unary(
+                '/account_service.AccountGrpc/ChangeAccountPassword',
+                request_serializer=password__pb2.ChangeAccountPasswordRequest.SerializeToString,
+                response_deserializer=password__pb2.ChangeAccountPasswordResponse.FromString,
+                )
 
 
 class AccountGrpcServicer(object):
@@ -80,6 +90,19 @@ class AccountGrpcServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ChangeAccountStatus(self, request, context):
+        """修改帐号状态
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ChangeAccountPassword(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_AccountGrpcServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -107,6 +130,16 @@ def add_AccountGrpcServicer_to_server(servicer, server):
                     servicer.ChangeOwnPassword,
                     request_deserializer=password__pb2.ChangeOwnPasswordRequest.FromString,
                     response_serializer=password__pb2.ChangeOwnPasswordResponse.SerializeToString,
+            ),
+            'ChangeAccountStatus': grpc.unary_unary_rpc_method_handler(
+                    servicer.ChangeAccountStatus,
+                    request_deserializer=account__pb2.ChangeAccountStatusRequest.FromString,
+                    response_serializer=account__pb2.ChangeAccountStatusResponse.SerializeToString,
+            ),
+            'ChangeAccountPassword': grpc.unary_unary_rpc_method_handler(
+                    servicer.ChangeAccountPassword,
+                    request_deserializer=password__pb2.ChangeAccountPasswordRequest.FromString,
+                    response_serializer=password__pb2.ChangeAccountPasswordResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -200,5 +233,39 @@ class AccountGrpc(object):
         return grpc.experimental.unary_unary(request, target, '/account_service.AccountGrpc/ChangeOwnPassword',
             password__pb2.ChangeOwnPasswordRequest.SerializeToString,
             password__pb2.ChangeOwnPasswordResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ChangeAccountStatus(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/account_service.AccountGrpc/ChangeAccountStatus',
+            account__pb2.ChangeAccountStatusRequest.SerializeToString,
+            account__pb2.ChangeAccountStatusResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ChangeAccountPassword(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/account_service.AccountGrpc/ChangeAccountPassword',
+            password__pb2.ChangeAccountPasswordRequest.SerializeToString,
+            password__pb2.ChangeAccountPasswordResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

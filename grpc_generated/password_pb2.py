@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0epassword.proto\x12\x0f\x61\x63\x63ount_service\"F\n\x18\x43hangeOwnPasswordRequest\x12\x14\n\x0cold_password\x18\x01 \x01(\t\x12\x14\n\x0cnew_password\x18\x02 \x01(\t\"+\n\x19\x43hangeOwnPasswordResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"@\n\x14ResetPasswordRequest\x12\x12\n\naccount_id\x18\x01 \x01(\t\x12\x14\n\x0cnew_password\x18\x02 \x01(\t\"\'\n\x15ResetPasswordResponse\x12\x0e\n\x06result\x18\x01 \x01(\tb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0epassword.proto\x12\x0f\x61\x63\x63ount_service\"F\n\x18\x43hangeOwnPasswordRequest\x12\x14\n\x0cold_password\x18\x01 \x01(\t\x12\x14\n\x0cnew_password\x18\x02 \x01(\t\"+\n\x19\x43hangeOwnPasswordResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"H\n\x1c\x43hangeAccountPasswordRequest\x12\x12\n\naccount_id\x18\x01 \x01(\t\x12\x14\n\x0cnew_password\x18\x02 \x01(\t\"/\n\x1d\x43hangeAccountPasswordResponse\x12\x0e\n\x06result\x18\x01 \x01(\tb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'password_pb2', globals())
@@ -24,8 +24,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _CHANGEOWNPASSWORDREQUEST._serialized_end=105
   _CHANGEOWNPASSWORDRESPONSE._serialized_start=107
   _CHANGEOWNPASSWORDRESPONSE._serialized_end=150
-  _RESETPASSWORDREQUEST._serialized_start=152
-  _RESETPASSWORDREQUEST._serialized_end=216
-  _RESETPASSWORDRESPONSE._serialized_start=218
-  _RESETPASSWORDRESPONSE._serialized_end=257
+  _CHANGEACCOUNTPASSWORDREQUEST._serialized_start=152
+  _CHANGEACCOUNTPASSWORDREQUEST._serialized_end=224
+  _CHANGEACCOUNTPASSWORDRESPONSE._serialized_start=226
+  _CHANGEACCOUNTPASSWORDRESPONSE._serialized_end=273
 # @@protoc_insertion_point(module_scope)
