@@ -15,7 +15,7 @@ async def main():
     metadata, person = await login(area_code, phone, passwd, insecure_channel)
 
     client_stub = get_knitter_client_stub(channel=insecure_channel)
-    new_value = dict({"zh": "管理测试"})
+    new_value = dict({"zh": "编辑测试"})
     request = EditEntityMapFieldRequest(
         manage_id=MANAGES_MANAGE_ID,
         entity_id="10000",

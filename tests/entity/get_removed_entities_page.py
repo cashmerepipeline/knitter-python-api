@@ -3,8 +3,8 @@ from logging import error
 
 import bson
 
-from common_services.entity import get_entities_page
-from entity_pb2 import GetEntitiesPageRequest
+from common_services.entity import get_entities_page, get_removed_entities_page
+from entity_pb2 import GetRemovedEntitiesPageRequest
 from id_codes.manage_ids import GROUPS_MANAGE_ID, MANAGES_MANAGE_ID
 from knitter_client import get_knitter_client_stub, login
 from test_settings import *
@@ -14,9 +14,9 @@ async def main():
     metadata, person= await login(area_code, phone, passwd, insecure_channel)
 
     client_stub = get_knitter_client_stub(channel=insecure_channel)
-    request = GetEntitiesPageRequest(manage_id=GROUPS_MANAGE_ID, page_index = 1)
+    request = GetRemovedEntitiesPageRequest(manage_id=GROUPS_MANAGE_ID, page_index = 1)
 
-    ok, m_response, details = await get_entities_page(request, client_stub, metadata=metadata) 
+    ok, m_response, details = await get_removed_entities_page(request, client_stub, metadata=metadata) 
 
     # 打印管理表
     if ok == grpc.StatusCode.OK:

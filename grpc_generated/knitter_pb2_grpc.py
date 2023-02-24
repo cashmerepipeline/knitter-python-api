@@ -107,6 +107,16 @@ class KnitterGrpcStub(object):
                 request_serializer=entity__pb2.MarkEntityRemovedRequest.SerializeToString,
                 response_deserializer=entity__pb2.MarkEntityRemovedResponse.FromString,
                 )
+        self.RecoverRemovedEntity = channel.unary_unary(
+                '/io.knitter.KnitterGrpc/RecoverRemovedEntity',
+                request_serializer=entity__pb2.RecoverRemovedEntityRequest.SerializeToString,
+                response_deserializer=entity__pb2.RecoverRemovedEntityResponse.FromString,
+                )
+        self.GetRemovedEntitiesPage = channel.unary_unary(
+                '/io.knitter.KnitterGrpc/GetRemovedEntitiesPage',
+                request_serializer=entity__pb2.GetRemovedEntitiesPageRequest.SerializeToString,
+                response_deserializer=entity__pb2.GetRemovedEntitiesPageResponse.FromString,
+                )
         self.EditEntityField = channel.unary_unary(
                 '/io.knitter.KnitterGrpc/EditEntityField',
                 request_serializer=entity__pb2.EditEntityFieldRequest.SerializeToString,
@@ -449,6 +459,18 @@ class KnitterGrpcServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def MarkEntityRemoved(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def RecoverRemovedEntity(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetRemovedEntitiesPage(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -853,6 +875,16 @@ def add_KnitterGrpcServicer_to_server(servicer, server):
                     servicer.MarkEntityRemoved,
                     request_deserializer=entity__pb2.MarkEntityRemovedRequest.FromString,
                     response_serializer=entity__pb2.MarkEntityRemovedResponse.SerializeToString,
+            ),
+            'RecoverRemovedEntity': grpc.unary_unary_rpc_method_handler(
+                    servicer.RecoverRemovedEntity,
+                    request_deserializer=entity__pb2.RecoverRemovedEntityRequest.FromString,
+                    response_serializer=entity__pb2.RecoverRemovedEntityResponse.SerializeToString,
+            ),
+            'GetRemovedEntitiesPage': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetRemovedEntitiesPage,
+                    request_deserializer=entity__pb2.GetRemovedEntitiesPageRequest.FromString,
+                    response_serializer=entity__pb2.GetRemovedEntitiesPageResponse.SerializeToString,
             ),
             'EditEntityField': grpc.unary_unary_rpc_method_handler(
                     servicer.EditEntityField,
@@ -1354,6 +1386,40 @@ class KnitterGrpc(object):
         return grpc.experimental.unary_unary(request, target, '/io.knitter.KnitterGrpc/MarkEntityRemoved',
             entity__pb2.MarkEntityRemovedRequest.SerializeToString,
             entity__pb2.MarkEntityRemovedResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def RecoverRemovedEntity(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/io.knitter.KnitterGrpc/RecoverRemovedEntity',
+            entity__pb2.RecoverRemovedEntityRequest.SerializeToString,
+            entity__pb2.RecoverRemovedEntityResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetRemovedEntitiesPage(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/io.knitter.KnitterGrpc/GetRemovedEntitiesPage',
+            entity__pb2.GetRemovedEntitiesPageRequest.SerializeToString,
+            entity__pb2.GetRemovedEntitiesPageResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
