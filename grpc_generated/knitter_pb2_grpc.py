@@ -237,15 +237,15 @@ class KnitterGrpcStub(object):
                 request_serializer=asset__collection__pb2.NewAssetCollectionRequest.SerializeToString,
                 response_deserializer=asset__collection__pb2.NewAssetCollectionResponse.FromString,
                 )
-        self.GetAssetCollectionAssetTotalPagesCount = channel.unary_unary(
-                '/io.knitter.KnitterGrpc/GetAssetCollectionAssetTotalPagesCount',
-                request_serializer=asset__collection__pb2.GetAssetCollectionAssetTotalPagesCountRequest.SerializeToString,
-                response_deserializer=asset__collection__pb2.GetAssetCollectionAssetTotalPagesCountResponse.FromString,
+        self.GetAssetCollectionAssetTotalCount = channel.unary_unary(
+                '/io.knitter.KnitterGrpc/GetAssetCollectionAssetTotalCount',
+                request_serializer=asset__collection__pb2.GetAssetCollectionAssetTotalCountRequest.SerializeToString,
+                response_deserializer=asset__collection__pb2.GetAssetCollectionAssetTotalCountResponse.FromString,
                 )
-        self.GetAssetCollectionAssemblyTotalPagesCount = channel.unary_unary(
-                '/io.knitter.KnitterGrpc/GetAssetCollectionAssemblyTotalPagesCount',
-                request_serializer=asset__collection__pb2.GetAssetCollectionAssemblyTotalPagesCountRequest.SerializeToString,
-                response_deserializer=asset__collection__pb2.GetAssetCollectionAssemblyTotalPagesCountResponse.FromString,
+        self.GetAssetCollectionAssemblyTotalCount = channel.unary_unary(
+                '/io.knitter.KnitterGrpc/GetAssetCollectionAssemblyTotalCount',
+                request_serializer=asset__collection__pb2.GetAssetCollectionAssemblyTotalCountRequest.SerializeToString,
+                response_deserializer=asset__collection__pb2.GetAssetCollectionAssemblyTotalCountResponse.FromString,
                 )
         self.GetAssetCollectionAssetsPage = channel.unary_unary(
                 '/io.knitter.KnitterGrpc/GetAssetCollectionAssetsPage',
@@ -631,13 +631,13 @@ class KnitterGrpcServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def GetAssetCollectionAssetTotalPagesCount(self, request, context):
+    def GetAssetCollectionAssetTotalCount(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def GetAssetCollectionAssemblyTotalPagesCount(self, request, context):
+    def GetAssetCollectionAssemblyTotalCount(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1006,15 +1006,15 @@ def add_KnitterGrpcServicer_to_server(servicer, server):
                     request_deserializer=asset__collection__pb2.NewAssetCollectionRequest.FromString,
                     response_serializer=asset__collection__pb2.NewAssetCollectionResponse.SerializeToString,
             ),
-            'GetAssetCollectionAssetTotalPagesCount': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetAssetCollectionAssetTotalPagesCount,
-                    request_deserializer=asset__collection__pb2.GetAssetCollectionAssetTotalPagesCountRequest.FromString,
-                    response_serializer=asset__collection__pb2.GetAssetCollectionAssetTotalPagesCountResponse.SerializeToString,
+            'GetAssetCollectionAssetTotalCount': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetAssetCollectionAssetTotalCount,
+                    request_deserializer=asset__collection__pb2.GetAssetCollectionAssetTotalCountRequest.FromString,
+                    response_serializer=asset__collection__pb2.GetAssetCollectionAssetTotalCountResponse.SerializeToString,
             ),
-            'GetAssetCollectionAssemblyTotalPagesCount': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetAssetCollectionAssemblyTotalPagesCount,
-                    request_deserializer=asset__collection__pb2.GetAssetCollectionAssemblyTotalPagesCountRequest.FromString,
-                    response_serializer=asset__collection__pb2.GetAssetCollectionAssemblyTotalPagesCountResponse.SerializeToString,
+            'GetAssetCollectionAssemblyTotalCount': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetAssetCollectionAssemblyTotalCount,
+                    request_deserializer=asset__collection__pb2.GetAssetCollectionAssemblyTotalCountRequest.FromString,
+                    response_serializer=asset__collection__pb2.GetAssetCollectionAssemblyTotalCountResponse.SerializeToString,
             ),
             'GetAssetCollectionAssetsPage': grpc.unary_unary_rpc_method_handler(
                     servicer.GetAssetCollectionAssetsPage,
@@ -1832,7 +1832,7 @@ class KnitterGrpc(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def GetAssetCollectionAssetTotalPagesCount(request,
+    def GetAssetCollectionAssetTotalCount(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1842,14 +1842,14 @@ class KnitterGrpc(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/io.knitter.KnitterGrpc/GetAssetCollectionAssetTotalPagesCount',
-            asset__collection__pb2.GetAssetCollectionAssetTotalPagesCountRequest.SerializeToString,
-            asset__collection__pb2.GetAssetCollectionAssetTotalPagesCountResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/io.knitter.KnitterGrpc/GetAssetCollectionAssetTotalCount',
+            asset__collection__pb2.GetAssetCollectionAssetTotalCountRequest.SerializeToString,
+            asset__collection__pb2.GetAssetCollectionAssetTotalCountResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def GetAssetCollectionAssemblyTotalPagesCount(request,
+    def GetAssetCollectionAssemblyTotalCount(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1859,9 +1859,9 @@ class KnitterGrpc(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/io.knitter.KnitterGrpc/GetAssetCollectionAssemblyTotalPagesCount',
-            asset__collection__pb2.GetAssetCollectionAssemblyTotalPagesCountRequest.SerializeToString,
-            asset__collection__pb2.GetAssetCollectionAssemblyTotalPagesCountResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/io.knitter.KnitterGrpc/GetAssetCollectionAssemblyTotalCount',
+            asset__collection__pb2.GetAssetCollectionAssemblyTotalCountRequest.SerializeToString,
+            asset__collection__pb2.GetAssetCollectionAssemblyTotalCountResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

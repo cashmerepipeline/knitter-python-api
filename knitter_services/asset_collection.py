@@ -14,6 +14,14 @@ async def new_asset_collection(request, stub: KnitterGrpcStub, metadata):
         return (e.code(), None, e.details())
 
 
+async def get_asset_collection_asset_total_count(request, stub: KnitterGrpcStub, metadata):
+    try:
+        response = stub.GetAssetCollectionAssetTotalCount(request, metadata=metadata)
+        return (grpc.StatusCode.OK, response, None)
+    except grpc.RpcError as e:
+        # print(e.code(), None, e.details())
+        return (e.code(), None, e.details())
+
 async def get_asset_collection_assets_page(request, stub: KnitterGrpcStub, metadata):
     try:
         response = stub.GetAssetCollectionAssetsPage(request, metadata=metadata)
@@ -22,6 +30,13 @@ async def get_asset_collection_assets_page(request, stub: KnitterGrpcStub, metad
         # print(e.code(), None, e.details())
         return (e.code(), None, e.details())
 
+async def get_asset_collection_assembly_total_count(request, stub: KnitterGrpcStub, metadata):
+    try:
+        response = stub.GetAssetCollectionAssemblyTotalCount(request, metadata=metadata)
+        return (grpc.StatusCode.OK, response, None)
+    except grpc.RpcError as e:
+        # print(e.code(), None, e.details())
+        return (e.code(), None, e.details())
 
 async def get_asset_collection_assemblies_page(
     request, stub: KnitterGrpcStub, metadata
