@@ -232,6 +232,11 @@ class KnitterGrpcStub(object):
                 request_serializer=project__pb2.GetProjectAssociatedSetCollectionsRequest.SerializeToString,
                 response_deserializer=project__pb2.GetProjectAssociatedSetCollectionsResponse.FromString,
                 )
+        self.ChangeProjectStatus = channel.unary_unary(
+                '/io.knitter.KnitterGrpc/ChangeProjectStatus',
+                request_serializer=project__pb2.ChangeProjectStatusRequest.SerializeToString,
+                response_deserializer=project__pb2.ChangeProjectStatusResponse.FromString,
+                )
         self.NewAssetCollection = channel.unary_unary(
                 '/io.knitter.KnitterGrpc/NewAssetCollection',
                 request_serializer=asset__collection__pb2.NewAssetCollectionRequest.SerializeToString,
@@ -256,11 +261,6 @@ class KnitterGrpcStub(object):
                 '/io.knitter.KnitterGrpc/GetAssetCollectionAssembliesPage',
                 request_serializer=asset__collection__pb2.GetAssetCollectionAssembliesPageRequest.SerializeToString,
                 response_deserializer=asset__collection__pb2.GetAssetCollectionAssembliesPageResponse.FromString,
-                )
-        self.MarkAssetCollectionStatus = channel.unary_unary(
-                '/io.knitter.KnitterGrpc/MarkAssetCollectionStatus',
-                request_serializer=asset__collection__pb2.MarkAssetCollectionStatusRequest.SerializeToString,
-                response_deserializer=asset__collection__pb2.MarkAssetCollectionStatusResponse.FromString,
                 )
         self.NewAsset = channel.unary_unary(
                 '/io.knitter.KnitterGrpc/NewAsset',
@@ -624,6 +624,12 @@ class KnitterGrpcServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ChangeProjectStatus(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def NewAssetCollection(self, request, context):
         """资产集 
         """
@@ -650,13 +656,8 @@ class KnitterGrpcServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetAssetCollectionAssembliesPage(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def MarkAssetCollectionStatus(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """rpc MarkAssetCollectionStatus(MarkAssetCollectionStatusRequest) returns (MarkAssetCollectionStatusResponse);
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -1001,6 +1002,11 @@ def add_KnitterGrpcServicer_to_server(servicer, server):
                     request_deserializer=project__pb2.GetProjectAssociatedSetCollectionsRequest.FromString,
                     response_serializer=project__pb2.GetProjectAssociatedSetCollectionsResponse.SerializeToString,
             ),
+            'ChangeProjectStatus': grpc.unary_unary_rpc_method_handler(
+                    servicer.ChangeProjectStatus,
+                    request_deserializer=project__pb2.ChangeProjectStatusRequest.FromString,
+                    response_serializer=project__pb2.ChangeProjectStatusResponse.SerializeToString,
+            ),
             'NewAssetCollection': grpc.unary_unary_rpc_method_handler(
                     servicer.NewAssetCollection,
                     request_deserializer=asset__collection__pb2.NewAssetCollectionRequest.FromString,
@@ -1025,11 +1031,6 @@ def add_KnitterGrpcServicer_to_server(servicer, server):
                     servicer.GetAssetCollectionAssembliesPage,
                     request_deserializer=asset__collection__pb2.GetAssetCollectionAssembliesPageRequest.FromString,
                     response_serializer=asset__collection__pb2.GetAssetCollectionAssembliesPageResponse.SerializeToString,
-            ),
-            'MarkAssetCollectionStatus': grpc.unary_unary_rpc_method_handler(
-                    servicer.MarkAssetCollectionStatus,
-                    request_deserializer=asset__collection__pb2.MarkAssetCollectionStatusRequest.FromString,
-                    response_serializer=asset__collection__pb2.MarkAssetCollectionStatusResponse.SerializeToString,
             ),
             'NewAsset': grpc.unary_unary_rpc_method_handler(
                     servicer.NewAsset,
@@ -1815,6 +1816,23 @@ class KnitterGrpc(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
+    def ChangeProjectStatus(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/io.knitter.KnitterGrpc/ChangeProjectStatus',
+            project__pb2.ChangeProjectStatusRequest.SerializeToString,
+            project__pb2.ChangeProjectStatusResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
     def NewAssetCollection(request,
             target,
             options=(),
@@ -1896,23 +1914,6 @@ class KnitterGrpc(object):
         return grpc.experimental.unary_unary(request, target, '/io.knitter.KnitterGrpc/GetAssetCollectionAssembliesPage',
             asset__collection__pb2.GetAssetCollectionAssembliesPageRequest.SerializeToString,
             asset__collection__pb2.GetAssetCollectionAssembliesPageResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def MarkAssetCollectionStatus(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/io.knitter.KnitterGrpc/MarkAssetCollectionStatus',
-            asset__collection__pb2.MarkAssetCollectionStatusRequest.SerializeToString,
-            asset__collection__pb2.MarkAssetCollectionStatusResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
