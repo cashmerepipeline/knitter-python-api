@@ -217,10 +217,20 @@ class KnitterGrpcStub(object):
                 request_serializer=project__pb2.AssociateAssetCollectionsToProjectRequest.SerializeToString,
                 response_deserializer=project__pb2.AssociateAssetCollectionsToProjectResponse.FromString,
                 )
+        self.DeassociateAssetCollectionsFromProject = channel.unary_unary(
+                '/io.knitter.KnitterGrpc/DeassociateAssetCollectionsFromProject',
+                request_serializer=project__pb2.DeassociateAssetCollectionsFromProjectRequest.SerializeToString,
+                response_deserializer=project__pb2.DeassociateAssetCollectionsFromProjectResponse.FromString,
+                )
         self.AssociateSetCollectionsToProject = channel.unary_unary(
                 '/io.knitter.KnitterGrpc/AssociateSetCollectionsToProject',
                 request_serializer=project__pb2.AssociateSetCollectionsToProjectRequest.SerializeToString,
                 response_deserializer=project__pb2.AssociateSetCollectionsToProjectResponse.FromString,
+                )
+        self.DeassociateSetCollectionsFromProject = channel.unary_unary(
+                '/io.knitter.KnitterGrpc/DeassociateSetCollectionsFromProject',
+                request_serializer=project__pb2.DeassociateSetCollectionsFromProjectRequest.SerializeToString,
+                response_deserializer=project__pb2.DeassociateSetCollectionsFromProjectResponse.FromString,
                 )
         self.GetProjectAssociatedAssetCollections = channel.unary_unary(
                 '/io.knitter.KnitterGrpc/GetProjectAssociatedAssetCollections',
@@ -606,7 +616,19 @@ class KnitterGrpcServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def DeassociateAssetCollectionsFromProject(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def AssociateSetCollectionsToProject(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeassociateSetCollectionsFromProject(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -987,10 +1009,20 @@ def add_KnitterGrpcServicer_to_server(servicer, server):
                     request_deserializer=project__pb2.AssociateAssetCollectionsToProjectRequest.FromString,
                     response_serializer=project__pb2.AssociateAssetCollectionsToProjectResponse.SerializeToString,
             ),
+            'DeassociateAssetCollectionsFromProject': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeassociateAssetCollectionsFromProject,
+                    request_deserializer=project__pb2.DeassociateAssetCollectionsFromProjectRequest.FromString,
+                    response_serializer=project__pb2.DeassociateAssetCollectionsFromProjectResponse.SerializeToString,
+            ),
             'AssociateSetCollectionsToProject': grpc.unary_unary_rpc_method_handler(
                     servicer.AssociateSetCollectionsToProject,
                     request_deserializer=project__pb2.AssociateSetCollectionsToProjectRequest.FromString,
                     response_serializer=project__pb2.AssociateSetCollectionsToProjectResponse.SerializeToString,
+            ),
+            'DeassociateSetCollectionsFromProject': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeassociateSetCollectionsFromProject,
+                    request_deserializer=project__pb2.DeassociateSetCollectionsFromProjectRequest.FromString,
+                    response_serializer=project__pb2.DeassociateSetCollectionsFromProjectResponse.SerializeToString,
             ),
             'GetProjectAssociatedAssetCollections': grpc.unary_unary_rpc_method_handler(
                     servicer.GetProjectAssociatedAssetCollections,
@@ -1765,6 +1797,23 @@ class KnitterGrpc(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
+    def DeassociateAssetCollectionsFromProject(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/io.knitter.KnitterGrpc/DeassociateAssetCollectionsFromProject',
+            project__pb2.DeassociateAssetCollectionsFromProjectRequest.SerializeToString,
+            project__pb2.DeassociateAssetCollectionsFromProjectResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
     def AssociateSetCollectionsToProject(request,
             target,
             options=(),
@@ -1778,6 +1827,23 @@ class KnitterGrpc(object):
         return grpc.experimental.unary_unary(request, target, '/io.knitter.KnitterGrpc/AssociateSetCollectionsToProject',
             project__pb2.AssociateSetCollectionsToProjectRequest.SerializeToString,
             project__pb2.AssociateSetCollectionsToProjectResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeassociateSetCollectionsFromProject(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/io.knitter.KnitterGrpc/DeassociateSetCollectionsFromProject',
+            project__pb2.DeassociateSetCollectionsFromProjectRequest.SerializeToString,
+            project__pb2.DeassociateSetCollectionsFromProjectResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
