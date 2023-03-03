@@ -19,7 +19,7 @@ async def main():
     metadata, person = await login(area_code, phone, passwd, insecure_channel)
 
     client_stub = get_knitter_client_stub(channel=insecure_channel)
-    name = Name(language="zh", name="测试资产集")
+    name = Name(language="zh", name="测试景集")
     request = NewSetCollectionRequest(
         name=name,
         inner_root_path="set_collections/inner/test_set_collection",

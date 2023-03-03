@@ -14,15 +14,15 @@ _sym_db = _symbol_database.Default()
 import name_pb2 as name__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\rproject.proto\x12\nio.knitter\x1a\nname.proto\"\x8c\x01\n\x11NewProjectRequest\x12\x1c\n\x04name\x18\x01 \x01(\x0b\x32\x0e.cashmere.Name\x12\x17\n\x0finner_root_path\x18\x02 \x01(\t\x12\x1a\n\x12\x65xternal_root_path\x18\x03 \x01(\t\x12\x0f\n\x07picture\x18\x04 \x01(\x0c\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\"$\n\x12NewProjectResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"[\n\x1a\x43hangeProjectStatusRequest\x12\x12\n\nproject_id\x18\x01 \x01(\t\x12)\n\x06status\x18\x02 \x01(\x0e\x32\x19.io.knitter.ProjectStatus\"H\n\x1b\x43hangeProjectStatusResponse\x12)\n\x06status\x18\x01 \x01(\x0e\x32\x19.io.knitter.ProjectStatus\"W\n)AssociateAssetCollectionsToProjectRequest\x12\x12\n\nproject_id\x18\x01 \x01(\t\x12\x16\n\x0e\x63ollection_ids\x18\x02 \x03(\t\"<\n*AssociateAssetCollectionsToProjectResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"[\n-DeassociateAssetCollectionsFromProjectRequest\x12\x12\n\nproject_id\x18\x01 \x01(\t\x12\x16\n\x0e\x63ollection_ids\x18\x02 \x03(\t\"@\n.DeassociateAssetCollectionsFromProjectResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"U\n\'AssociateSetCollectionsToProjectRequest\x12\x12\n\nproject_id\x18\x01 \x01(\t\x12\x16\n\x0e\x63ollection_ids\x18\x02 \x03(\t\":\n(AssociateSetCollectionsToProjectResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"Y\n+DeassociateSetCollectionsFromProjectRequest\x12\x12\n\nproject_id\x18\x01 \x01(\t\x12\x16\n\x0e\x63ollection_ids\x18\x02 \x03(\t\">\n,DeassociateSetCollectionsFromProjectResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"Y\n+GetProjectAssociatedAssetCollectionsRequest\x12\x12\n\nproject_id\x18\x01 \x01(\t\x12\x16\n\x0e\x63ollection_ids\x18\x02 \x03(\t\"I\n,GetProjectAssociatedAssetCollectionsResponse\x12\x19\n\x11\x61sset_collections\x18\x01 \x03(\x0c\"[\n)GetProjectAssociatedSetCollectionsRequest\x12\x12\n\nproject_id\x18\x01 \x01(\t\x12\x1a\n\x12set_collection_ids\x18\x02 \x03(\t\"E\n*GetProjectAssociatedSetCollectionsResponse\x12\x17\n\x0fset_collections\x18\x01 \x03(\x0c\",\n\x16GetProjectEpicsRequest\x12\x12\n\nproject_id\x18\x01 \x01(\t\"(\n\x17GetProjectEpicsResponse\x12\r\n\x05\x65pics\x18\x01 \x03(\x0c*c\n\rProjectStatus\x12\x13\n\x0fProjectCanceled\x10\x00\x12\x12\n\x0eProjectRunning\x10\x01\x12\x14\n\x10ProjectSuspended\x10\x02\x12\x13\n\x0fProjectComplete\x10\x03\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\rproject.proto\x12\nio.knitter\x1a\nname.proto\"\x8c\x01\n\x11NewProjectRequest\x12\x1c\n\x04name\x18\x01 \x01(\x0b\x32\x0e.cashmere.Name\x12\x17\n\x0finner_root_path\x18\x02 \x01(\t\x12\x1a\n\x12\x65xternal_root_path\x18\x03 \x01(\t\x12\x0f\n\x07picture\x18\x04 \x01(\x0c\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\"$\n\x12NewProjectResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"[\n\x1a\x43hangeProjectStatusRequest\x12\x12\n\nproject_id\x18\x01 \x01(\t\x12)\n\x06status\x18\x02 \x01(\x0e\x32\x19.io.knitter.ProjectStatus\"H\n\x1b\x43hangeProjectStatusResponse\x12)\n\x06status\x18\x01 \x01(\x0e\x32\x19.io.knitter.ProjectStatus\"W\n)AssociateAssetCollectionsToProjectRequest\x12\x12\n\nproject_id\x18\x01 \x01(\t\x12\x16\n\x0e\x63ollection_ids\x18\x02 \x03(\t\"<\n*AssociateAssetCollectionsToProjectResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"[\n-DeassociateAssetCollectionsFromProjectRequest\x12\x12\n\nproject_id\x18\x01 \x01(\t\x12\x16\n\x0e\x63ollection_ids\x18\x02 \x03(\t\"@\n.DeassociateAssetCollectionsFromProjectResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"U\n\'AssociateSetCollectionsToProjectRequest\x12\x12\n\nproject_id\x18\x01 \x01(\t\x12\x16\n\x0e\x63ollection_ids\x18\x02 \x03(\t\":\n(AssociateSetCollectionsToProjectResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"Y\n+DeassociateSetCollectionsFromProjectRequest\x12\x12\n\nproject_id\x18\x01 \x01(\t\x12\x16\n\x0e\x63ollection_ids\x18\x02 \x03(\t\">\n,DeassociateSetCollectionsFromProjectResponse\x12\x0e\n\x06result\x18\x01 \x01(\t\"Y\n+GetProjectAssociatedAssetCollectionsRequest\x12\x12\n\nproject_id\x18\x01 \x01(\t\x12\x16\n\x0e\x63ollection_ids\x18\x02 \x03(\t\"I\n,GetProjectAssociatedAssetCollectionsResponse\x12\x19\n\x11\x61sset_collections\x18\x01 \x03(\x0c\"W\n)GetProjectAssociatedSetCollectionsRequest\x12\x12\n\nproject_id\x18\x01 \x01(\t\x12\x16\n\x0e\x63ollection_ids\x18\x02 \x03(\t\"E\n*GetProjectAssociatedSetCollectionsResponse\x12\x17\n\x0fset_collections\x18\x01 \x03(\x0c\",\n\x16GetProjectEpicsRequest\x12\x12\n\nproject_id\x18\x01 \x01(\t\"(\n\x17GetProjectEpicsResponse\x12\r\n\x05\x65pics\x18\x01 \x03(\x0c*c\n\rProjectStatus\x12\x13\n\x0fProjectCanceled\x10\x00\x12\x12\n\x0eProjectRunning\x10\x01\x12\x14\n\x10ProjectSuspended\x10\x02\x12\x13\n\x0fProjectComplete\x10\x03\x62\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'project_pb2', globals())
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  _PROJECTSTATUS._serialized_start=1419
-  _PROJECTSTATUS._serialized_end=1518
+  _PROJECTSTATUS._serialized_start=1415
+  _PROJECTSTATUS._serialized_end=1514
   _NEWPROJECTREQUEST._serialized_start=42
   _NEWPROJECTREQUEST._serialized_end=182
   _NEWPROJECTRESPONSE._serialized_start=184
@@ -52,11 +52,11 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _GETPROJECTASSOCIATEDASSETCOLLECTIONSRESPONSE._serialized_start=1092
   _GETPROJECTASSOCIATEDASSETCOLLECTIONSRESPONSE._serialized_end=1165
   _GETPROJECTASSOCIATEDSETCOLLECTIONSREQUEST._serialized_start=1167
-  _GETPROJECTASSOCIATEDSETCOLLECTIONSREQUEST._serialized_end=1258
-  _GETPROJECTASSOCIATEDSETCOLLECTIONSRESPONSE._serialized_start=1260
-  _GETPROJECTASSOCIATEDSETCOLLECTIONSRESPONSE._serialized_end=1329
-  _GETPROJECTEPICSREQUEST._serialized_start=1331
-  _GETPROJECTEPICSREQUEST._serialized_end=1375
-  _GETPROJECTEPICSRESPONSE._serialized_start=1377
-  _GETPROJECTEPICSRESPONSE._serialized_end=1417
+  _GETPROJECTASSOCIATEDSETCOLLECTIONSREQUEST._serialized_end=1254
+  _GETPROJECTASSOCIATEDSETCOLLECTIONSRESPONSE._serialized_start=1256
+  _GETPROJECTASSOCIATEDSETCOLLECTIONSRESPONSE._serialized_end=1325
+  _GETPROJECTEPICSREQUEST._serialized_start=1327
+  _GETPROJECTEPICSREQUEST._serialized_end=1371
+  _GETPROJECTEPICSRESPONSE._serialized_start=1373
+  _GETPROJECTEPICSRESPONSE._serialized_end=1413
 # @@protoc_insertion_point(module_scope)
